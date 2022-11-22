@@ -35,7 +35,15 @@ public class contact extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jButton6 = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
 
         jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\projectimage\\dashboardimage.jpg")); // NOI18N
 
@@ -56,7 +64,7 @@ public class contact extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Times New Roman", 2, 24)); // NOI18N
         jButton2.setText("Contact Us");
         jButton2.setBorder(null);
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, 185, 42));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 30, 185, 42));
 
         jButton3.setFont(new java.awt.Font("Times New Roman", 2, 24)); // NOI18N
         jButton3.setText("Profile");
@@ -70,14 +78,14 @@ public class contact extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel1.setText("Contact us :");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 140, 50));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 190, 130, 50));
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel2.setText("Let's  talk about the website or a project. Send us a message and we will be in touch within a day.");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 780, 100));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 780, 100));
 
         jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\projectimage\\email-removebg-preview.png")); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 180, 50, 40));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 260, 30, 30));
 
         jButton4.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jButton4.setText("jewelspot@gmail.com");
@@ -87,16 +95,45 @@ public class contact extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 190, 180, -1));
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 270, 120, -1));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\projectimage\\dashboardimage.jpg")); // NOI18N
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1170, 560));
+        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\projectimage\\instagram-icon-33483-removebg-preview.png")); // NOI18N
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 310, 30, 20));
+
+        jButton5.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jButton5.setText("jewelspot_original");
+        jButton5.setBorder(null);
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 310, 100, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 240, 160, -1));
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 270, 150, -1));
+
+        jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jLabel7.setText("Enter Your Name:");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 250, 100, -1));
+
+        jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jLabel8.setText("Contact No:");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 310, 70, 20));
+
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 330, 150, -1));
+
+        jButton6.setFont(new java.awt.Font("Times New Roman", 2, 18)); // NOI18N
+        jButton6.setText("Submit");
+        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 360, -1, -1));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\projectimage\\dashboardimage.jpg")); // NOI18N
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1170, 560));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1171, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -117,6 +154,10 @@ public class contact extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -158,11 +199,19 @@ public class contact extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }
