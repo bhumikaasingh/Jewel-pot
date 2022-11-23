@@ -44,6 +44,7 @@ public class contact extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         jButton6 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
 
         jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\projectimage\\dashboardimage.jpg")); // NOI18N
 
@@ -51,6 +52,7 @@ public class contact extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Times New Roman", 2, 24)); // NOI18N
         jButton1.setText("Home");
         jButton1.setBorderPainted(false);
@@ -61,11 +63,13 @@ public class contact extends javax.swing.JFrame {
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, 159, 42));
 
+        jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setFont(new java.awt.Font("Times New Roman", 2, 24)); // NOI18N
         jButton2.setText("Contact Us");
         jButton2.setBorder(null);
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 30, 185, 42));
 
+        jButton3.setBackground(new java.awt.Color(255, 255, 255));
         jButton3.setFont(new java.awt.Font("Times New Roman", 2, 24)); // NOI18N
         jButton3.setText("Profile");
         jButton3.setBorder(null);
@@ -105,6 +109,8 @@ public class contact extends javax.swing.JFrame {
         jButton5.setBorder(null);
         jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 310, 100, -1));
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 240, 160, -1));
+
+        jTextField1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 270, 150, -1));
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
@@ -115,6 +121,7 @@ public class contact extends javax.swing.JFrame {
         jLabel8.setText("Contact No:");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 310, 70, 20));
 
+        jTextField2.setBackground(new java.awt.Color(204, 204, 204));
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
@@ -128,6 +135,9 @@ public class contact extends javax.swing.JFrame {
 
         jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\projectimage\\dashboardimage.jpg")); // NOI18N
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1170, 560));
+
+        jLabel10.setText("jLabel10");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 400, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -202,6 +212,7 @@ public class contact extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
