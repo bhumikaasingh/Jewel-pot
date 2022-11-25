@@ -14,8 +14,8 @@ import javax.swing.JOptionPane;
 //import javax.mail.*;
 //import javax.activation.*;
 //import javax.mail.internet.*;
-////import javax.mail.Transport;
-////import javax.Session.*;
+//import javax.mail.Transport;
+//import javax.Session.*;
 
 /**
  *
@@ -104,17 +104,17 @@ public class contact extends javax.swing.JFrame {
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 340, 340, 40));
 
         jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\projectimage\\email-removebg-preview.png")); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 420, 40, 50));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 410, 40, 50));
 
-        send.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        send.setText("jewelspot71@gmail.com");
+        send.setFont(new java.awt.Font("Times New Roman", 2, 24)); // NOI18N
+        send.setText("Submit");
         send.setBorder(null);
         send.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sendActionPerformed(evt);
             }
         });
-        jPanel1.add(send, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 410, 160, 60));
+        jPanel1.add(send, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 420, 90, 30));
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 240, 160, -1));
 
         name.setBackground(new java.awt.Color(204, 204, 204));
@@ -181,18 +181,18 @@ public class contact extends javax.swing.JFrame {
         }else{
             System.out.println("fill the details !!!");
             JOptionPane.showMessageDialog(this, "fill the details");
-//        }  
+        }  
 //        
 ////        }else{
 //            System.out.println("incorrect password and confirmpassword!!");
 //            JOptionPane.showMessageDialog(this,"Password and ConfirmPassword Didn't match");
-       }
+//       }
     
       
         
 //        String from=email.getText();
-//        String to="jewelspot71@gmail.com";
-//        String host="localhost";
+//        String to="lalit69056@gmail.com";
+////        String host="localhost";
 //        String nname=name.getText();
 //        String message=message1.getText();
 //        String password="L@lit69056";
@@ -206,12 +206,12 @@ public class contact extends javax.swing.JFrame {
 //        properties.put("mail.smtp.port","587");
 //        properties.put("mail.transport.protocal","smtp"); 
 //        properties.put("mail.debug", "true");  
-//        properties.put("mail.smtp.starttls.enable","true");
+//
 //        properties.put("mail.smtp.socketFactory.port", "587");  
-//        properties.put("mail.smtp.socketFactory.class","javax.net.ssl.SSLSocketFactory");  
-//        properties.put("mail.smtp.socketFactory.fallback", "false");  
+////        properties.put("mail.smtp.socketFactory.class","javax.net.ssl.SSLSocketFactory");  
+////        properties.put("mail.smtp.socketFactory.fallback", "true");  
 //        
-//       properties.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+////       properties.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
 //                       properties.put("mail.smtp.auth", "true");       
 //        Session s=Session.getDefaultInstance(properties,new javax.mail.Authenticator(){
 //            protected PasswordAuthentication getPasswordAuthentication(){
@@ -225,7 +225,7 @@ public class contact extends javax.swing.JFrame {
 //                MimeMessage m= new MimeMessage(s);
 //                m.setSubject("email from the java");
 ////                m.setContact(",h1.Email from my cool program!</h1>","text/html");
-//                m.setFrom(new InternetAddress("roshanfc1029@gmail.com"));
+//                m.setFrom(new InternetAddress("lalit69056@gmail.com","qlkryjpdmdxuikkd"));
 //                m.addRecipient(Message.RecipientType.TO,new InternetAddress(to));
 //                m.setText(message);
 //                Transport.send(m);
@@ -235,7 +235,7 @@ public class contact extends javax.swing.JFrame {
 //                e.printStackTrace();
 //                
 //            }
-//        
+        
 
 
 
