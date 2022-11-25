@@ -1,8 +1,21 @@
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+
 package View;
+import model.Contactinfo;
+import controller.contactController;
+import javax.swing.JOptionPane;
+
+//import java.util.Properties;
+////import java.util.*;
+//import javax.mail.*;
+//import javax.activation.*;
+//import javax.mail.internet.*;
+////import javax.mail.Transport;
+////import javax.Session.*;
 
 /**
  *
@@ -16,6 +29,9 @@ public class contact extends javax.swing.JFrame {
     public contact() {
         initComponents();
     }
+    
+  
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -34,18 +50,15 @@ public class contact extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
+        send = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         name = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        contact = new javax.swing.JTextField();
-        jButton6 = new javax.swing.JButton();
+        email = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        message = new javax.swing.JTextField();
+        message1 = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
 
         jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\projectimage\\dashboardimage.jpg")); // NOI18N
@@ -84,61 +97,44 @@ public class contact extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel1.setText("Contact us :");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 190, 130, 50));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 130, 130, 50));
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel2.setText("Let's  talk about the website or a project.");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 340, 340, 40));
 
         jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\projectimage\\email-removebg-preview.png")); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 260, 30, 30));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 420, 40, 50));
 
-        jButton4.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jButton4.setText("jewelspot@gmail.com");
-        jButton4.setBorder(null);
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        send.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        send.setText("jewelspot71@gmail.com");
+        send.setBorder(null);
+        send.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                sendActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 270, 120, -1));
-
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\projectimage\\instagram-icon-33483-removebg-preview.png")); // NOI18N
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 310, 30, 20));
-
-        jButton5.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jButton5.setText("jewelspot_original");
-        jButton5.setBorder(null);
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 310, 100, -1));
+        jPanel1.add(send, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 410, 160, 60));
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 240, 160, -1));
 
         name.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel1.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 270, 150, -1));
+        jPanel1.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 230, 150, -1));
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel7.setText("Enter Your Name:");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 250, 100, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 210, 100, -1));
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel8.setText("Contact No:");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 310, 70, 20));
+        jLabel8.setText("Email:");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 260, 50, 20));
 
-        contact.setBackground(new java.awt.Color(204, 204, 204));
-        contact.addActionListener(new java.awt.event.ActionListener() {
+        email.setBackground(new java.awt.Color(204, 204, 204));
+        email.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                contactActionPerformed(evt);
+                emailActionPerformed(evt);
             }
         });
-        jPanel1.add(contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 330, 150, -1));
-
-        jButton6.setFont(new java.awt.Font("Times New Roman", 2, 18)); // NOI18N
-        jButton6.setText("Submit");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 460, -1, -1));
+        jPanel1.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 280, 150, -1));
 
         jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel10.setText(" Send us a message and we will be in touch within a day.");
@@ -146,10 +142,10 @@ public class contact extends javax.swing.JFrame {
 
         jLabel11.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel11.setText("Enter Your Message:");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 370, 120, -1));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 320, 120, -1));
 
-        message.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel1.add(message, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 390, 170, 60));
+        message1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.add(message1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 340, 170, 60));
 
         jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\projectimage\\dashboardimage.jpg")); // NOI18N
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1170, 560));
@@ -172,43 +168,94 @@ public class contact extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void sendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sendActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+        Contactinfo po=new Contactinfo(name.getText(),email.getText(),message1.getText());
+        contactController pc=new contactController();
+        int insertContactinfo=pc.insertContactinfo(po);
+        
+        if(insertContactinfo>0){
+            System.out.println("email sent!!!");
+            JOptionPane.showMessageDialog(this,"email sent!!we will notify you soon!");
+            
+        }else{
+            System.out.println("fill the details !!!");
+            JOptionPane.showMessageDialog(this, "fill the details");
+//        }  
+//        
+////        }else{
+//            System.out.println("incorrect password and confirmpassword!!");
+//            JOptionPane.showMessageDialog(this,"Password and ConfirmPassword Didn't match");
+       }
+    
+      
+        
+//        String from=email.getText();
+//        String to="jewelspot71@gmail.com";
+//        String host="localhost";
+//        String nname=name.getText();
+//        String message=message1.getText();
+//        String password="L@lit69056";
+//        
+//        
+//        
+//        Properties properties=new Properties();
+//        properties.put("mail.smtp.auth","true");
+//        properties.put("mail.smtp.starttle.enable","true");
+//        properties.put("mail.smtp.host","smtp.gmail.com");
+//        properties.put("mail.smtp.port","587");
+//        properties.put("mail.transport.protocal","smtp"); 
+//        properties.put("mail.debug", "true");  
+//        properties.put("mail.smtp.starttls.enable","true");
+//        properties.put("mail.smtp.socketFactory.port", "587");  
+//        properties.put("mail.smtp.socketFactory.class","javax.net.ssl.SSLSocketFactory");  
+//        properties.put("mail.smtp.socketFactory.fallback", "false");  
+//        
+//       properties.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+//                       properties.put("mail.smtp.auth", "true");       
+//        Session s=Session.getDefaultInstance(properties,new javax.mail.Authenticator(){
+//            protected PasswordAuthentication getPasswordAuthentication(){
+//                return new PasswordAuthentication(from,password);
+//                
+//            }
+//           
+//        });
+//        System.out.println(s);
+//            try{
+//                MimeMessage m= new MimeMessage(s);
+//                m.setSubject("email from the java");
+////                m.setContact(",h1.Email from my cool program!</h1>","text/html");
+//                m.setFrom(new InternetAddress("roshanfc1029@gmail.com"));
+//                m.addRecipient(Message.RecipientType.TO,new InternetAddress(to));
+//                m.setText(message);
+//                Transport.send(m);
+//                System.out.println("success");
+////                
+//            }catch(Exception e){
+//                e.printStackTrace();
+//                
+//            }
+//        
+
+
+
+
+//      
+    }//GEN-LAST:event_sendActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void contactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contactActionPerformed
+    private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_contactActionPerformed
-
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-        
-//         if(d.getText().equals(e.getText())){
-//        Student so=new Student(a.getText(),b.getText(),c.getText(),d.getText(),e.getText());
-//        registercontroller sc=new registercontroller();
-//        int insertStudent=sc.insertStudent(so);
-//        
-//        if(insertStudent>0){
-//            System.out.println("Registered Successfully!!!");
-//            JOptionPane.showMessageDialog(this,"Registered!");
-//            
-//        }else{
-//            System.out.println("User Already Exist!!!");
-//        }  
-//        
-//        }else{
-//            System.out.println("incorrect password and confirmpassword!!");
-//            JOptionPane.showMessageDialog(this,"Password and ConfirmPassword Didn't match");
-//       }
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_emailActionPerformed
 
     /**
      * @param args the command line arguments
      */
+    
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -242,13 +289,10 @@ public class contact extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField contact;
+    private javax.swing.JTextField email;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -256,12 +300,13 @@ public class contact extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField message;
+    private javax.swing.JTextField message1;
     private javax.swing.JTextField name;
+    private javax.swing.JButton send;
     // End of variables declaration//GEN-END:variables
+
 }

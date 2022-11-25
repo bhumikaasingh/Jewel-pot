@@ -19,7 +19,7 @@ package View;
 //import javax.swing.*;
 //
 //import java.sql.*;
-import Model.*;
+
 import controller.registercontroller;
 import javax.swing.JOptionPane;
 
