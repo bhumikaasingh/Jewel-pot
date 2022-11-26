@@ -87,9 +87,9 @@ public class DbConnection {
         }catch (SQLIntegrityConstraintViolationException ex){
 
 
-            JOptionPane.showMessageDialog(null,"Registerd successfully");
+//            JOptionPane.showMessageDialog(null,"");
 
-            JOptionPane.showMessageDialog(null, "These details already exist!");
+//            JOptionPane.showMessageDialog(null, "");
 
 
         }catch (SQLException e){
