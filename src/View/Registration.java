@@ -172,10 +172,12 @@ public class Registration extends javax.swing.JFrame {
             System.out.println("Registered Successfully!!!");
             JOptionPane.showMessageDialog(this,"Registered!");
             
-        }else{
-            System.out.println("User Already Exist!!!");
+//        }
+//        else{
+//            System.out.println("Fill the details!!!");
+            
         }  
-        
+//        
         }else{
             System.out.println("incorrect password and confirmpassword!!");
             JOptionPane.showMessageDialog(this,"Password and ConfirmPassword Didn't match");
