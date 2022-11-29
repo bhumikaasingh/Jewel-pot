@@ -182,24 +182,9 @@ public class Registration extends javax.swing.JFrame {
             System.out.println("incorrect password and confirmpassword!!");
             JOptionPane.showMessageDialog(this,"Password and ConfirmPassword Didn't match");
        }
-//                 try{
-//            String m=a.getName().trim();
-//            String n=b.getName().trim();
-//            String o=c.getName().trim();
-//            String p=d.getName().trim();
-//            String q=e.getName().trim();
-//            Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/registration","root","4312@LR#1234");
-//            Statement st= con.createStatement();
-//            st.execute("insert into register values('"+m+"', '"+n+"', '"+o+"', '"+p+"', '"+q+",)");
-//            if (con!=null){
-//                System.out.println("registered successfully");          
-//            }else{
-//                System.out.println("Error! fill the detail");
-//            }
-//            JOptionPane.showMessageDialog(this,"Registerd successfully!!");
-//        }catch(Exception e){
-//            
-//        }
+       profile Profile = new profile();
+       Profile.username.setText(a.getText());
+       Profile.setVisible(true);
 
         
         
