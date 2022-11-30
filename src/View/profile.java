@@ -1,8 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package View;
+
+import model.profilemod;
+import Controller.ProfileController;
+
 
 /**
  *
@@ -28,15 +28,12 @@ public class profile extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         editProfile = new javax.swing.JButton();
-        update = new javax.swing.JButton();
+        updateprofile = new javax.swing.JButton();
         logout = new javax.swing.JButton();
-        username = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         userinfo = new javax.swing.JTextField();
-        passwordinfo = new javax.swing.JTextField();
-        conpassinfo = new javax.swing.JTextField();
+        contactinfo = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         emailinfo = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
@@ -52,12 +49,19 @@ public class profile extends javax.swing.JFrame {
                 editProfileActionPerformed(evt);
             }
         });
-        jPanel1.add(editProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, -1, -1));
+        jPanel1.add(editProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, -1, -1));
 
-        update.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
-        update.setText("Update");
-        jPanel1.add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 380, -1, -1));
+        updateprofile.setBackground(new java.awt.Color(0, 102, 255));
+        updateprofile.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
+        updateprofile.setText("Update");
+        updateprofile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateprofileActionPerformed(evt);
+            }
+        });
+        jPanel1.add(updateprofile, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 380, -1, -1));
 
+        logout.setBackground(new java.awt.Color(255, 51, 51));
         logout.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
         logout.setText("LogOut");
         logout.addActionListener(new java.awt.event.ActionListener() {
@@ -66,47 +70,44 @@ public class profile extends javax.swing.JFrame {
             }
         });
         jPanel1.add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 380, -1, -1));
-        jPanel1.add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, 132, 27));
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel1.setText("UserName:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 62, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, 62, 20));
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel2.setText("Password:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 62, -1));
+        jLabel2.setText("Contact:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, 50, 20));
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel3.setText("ConfirmPassword:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, -1, -1));
-
+        userinfo.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
         userinfo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 userinfoActionPerformed(evt);
             }
         });
-        jPanel1.add(userinfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 150, -1));
+        jPanel1.add(userinfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, 150, -1));
 
-        passwordinfo.addActionListener(new java.awt.event.ActionListener() {
+        contactinfo.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
+        contactinfo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordinfoActionPerformed(evt);
+                contactinfoActionPerformed(evt);
             }
         });
-        jPanel1.add(passwordinfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 150, -1));
-
-        conpassinfo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                conpassinfoActionPerformed(evt);
-            }
-        });
-        jPanel1.add(conpassinfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 330, 150, -1));
+        jPanel1.add(contactinfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 150, -1));
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel5.setText("Email:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, 50, -1));
-        jPanel1.add(emailinfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 150, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, 50, 20));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/jewe.jpg"))); // NOI18N
+        emailinfo.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
+        emailinfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                emailinfoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(emailinfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, 150, -1));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/dashboardimage.jpg"))); // NOI18N
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 530));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -126,6 +127,8 @@ public class profile extends javax.swing.JFrame {
     private void editProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editProfileActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_editProfileActionPerformed
+    
+         
 
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
         // TODO add your handling code here:
@@ -135,13 +138,19 @@ public class profile extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_userinfoActionPerformed
 
-    private void passwordinfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordinfoActionPerformed
+    private void contactinfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contactinfoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_passwordinfoActionPerformed
+    }//GEN-LAST:event_contactinfoActionPerformed
 
-    private void conpassinfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_conpassinfoActionPerformed
+    private void emailinfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailinfoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_conpassinfoActionPerformed
+    }//GEN-LAST:event_emailinfoActionPerformed
+
+    private void updateprofileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateprofileActionPerformed
+        // TODO add your handling code here:
+        ProfileController controller = new ProfileController();
+        controller.profilemod(userinfo.getText(),emailinfo.getText(),contactinfo.getText());
+    }//GEN-LAST:event_updateprofileActionPerformed
 
     /**
      * @param args the command line arguments
@@ -179,19 +188,16 @@ public class profile extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField conpassinfo;
+    public javax.swing.JTextField contactinfo;
     private javax.swing.JButton editProfile;
-    private javax.swing.JTextField emailinfo;
+    public javax.swing.JTextField emailinfo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton logout;
-    private javax.swing.JTextField passwordinfo;
-    private javax.swing.JButton update;
-    private javax.swing.JTextField userinfo;
-    public javax.swing.JLabel username;
+    private javax.swing.JButton updateprofile;
+    public javax.swing.JTextField userinfo;
     // End of variables declaration//GEN-END:variables
 }

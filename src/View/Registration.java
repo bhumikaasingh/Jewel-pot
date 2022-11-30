@@ -162,7 +162,14 @@ public class Registration extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
+      
+       profile Profile = new profile();
+       Profile.userinfo.setText(a.getText());
+       Profile.emailinfo.setText(b.getText());
+       Profile.contactinfo.setText(c.getText());
+       Profile.setVisible(true);
+       
+//       
        if(d.getText().equals(e.getText())){
         Student so=new Student(a.getText(),b.getText(),c.getText(),d.getText(),e.getText());
         registercontroller sc=new registercontroller();
@@ -172,22 +179,21 @@ public class Registration extends javax.swing.JFrame {
             System.out.println("Registered Successfully!!!");
             JOptionPane.showMessageDialog(this,"Registered!");
             
-//        }
-//        else{
-//            System.out.println("Fill the details!!!");
-            
-        }  
-//        
-        }else{
+        }
+        else 
+        {
+         System.out.println("Fill the details!!!");  
+         JOptionPane.showMessageDialog(this,"Fill the details!");
+        }
+        }
+        else{
             System.out.println("incorrect password and confirmpassword!!");
             JOptionPane.showMessageDialog(this,"Password and ConfirmPassword Didn't match");
        }
-       profile Profile = new profile();
-       Profile.username.setText(a.getText());
-       Profile.setVisible(true);
+       
 
         
-        
+       
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

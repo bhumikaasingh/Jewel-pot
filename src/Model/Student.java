@@ -1,6 +1,7 @@
 package model;
 
 public class Student {
+       
         private String Username;
         private String Email;
         private String Contact;
@@ -8,12 +9,14 @@ public class Student {
         private String confirmPassword;
 
         public Student(String Username,String Email,String Contact,String password,String confirmPassword){
+            
             this.Username=Username;
             this.Email=Email;
             this.Contact=Contact;
             this.password=password;
             this.confirmPassword=confirmPassword;
         }
+        
         public void setusername(String Username){
             this.Username=Username;
         }
