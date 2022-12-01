@@ -2,16 +2,24 @@
 package model;
 
 public class profilemod {
+        private int id;
         private String username;
         private String email;
         private String contact;
         
-
-        public profilemod(String username,String email,String contact){
+        
+        public profilemod(int id, String username,String email,String contact){
+            this.id=id;
             this.username=username;
             this.email=email;
             this.contact=contact;
             
+        }
+        public void setid(int id){
+            this.id=id;
+        }
+        public int getid(){
+            return this.id;
         }
         public void setusername(String username){
             this.username=username;

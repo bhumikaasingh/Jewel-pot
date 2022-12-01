@@ -77,6 +77,7 @@ public class Registration extends javax.swing.JFrame {
         jLabel3.setText("Email:");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 130, 78, -1));
 
+        a.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
         a.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 aActionPerformed(evt);
@@ -84,6 +85,7 @@ public class Registration extends javax.swing.JFrame {
         });
         jPanel1.add(a, new org.netbeans.lib.awtextra.AbsoluteConstraints(196, 152, 203, 32));
 
+        c.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
         c.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cActionPerformed(evt);
@@ -91,6 +93,7 @@ public class Registration extends javax.swing.JFrame {
         });
         jPanel1.add(c, new org.netbeans.lib.awtextra.AbsoluteConstraints(196, 310, 203, 30));
 
+        d.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
         d.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dActionPerformed(evt);
@@ -98,6 +101,7 @@ public class Registration extends javax.swing.JFrame {
         });
         jPanel1.add(d, new org.netbeans.lib.awtextra.AbsoluteConstraints(783, 310, 203, 30));
 
+        b.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
         b.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bActionPerformed(evt);
@@ -116,6 +120,8 @@ public class Registration extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel6.setText("Confirm Password:");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(555, 359, 133, -1));
+
+        e.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
         jPanel1.add(e, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 382, 180, 31));
 
         jButton1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -178,14 +184,16 @@ public class Registration extends javax.swing.JFrame {
         if(insertStudent>0){
             System.out.println("Registered Successfully!!!");
             JOptionPane.showMessageDialog(this,"Registered!");
-            
         }
+        
         else 
         {
          System.out.println("Fill the details!!!");  
          JOptionPane.showMessageDialog(this,"Fill the details!");
         }
+        
         }
+       
         else{
             System.out.println("incorrect password and confirmpassword!!");
             JOptionPane.showMessageDialog(this,"Password and ConfirmPassword Didn't match");
@@ -200,31 +208,7 @@ public class Registration extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Registration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Registration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Registration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Registration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
         
-
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Registration().setVisible(true);
