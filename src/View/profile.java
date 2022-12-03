@@ -2,6 +2,11 @@ package View;
 
 
 import Controller.ProfileController;
+import java.util.ArrayList;
+import java.util.List;
+import model.profilemod;
+
+
 
 public class profile extends javax.swing.JFrame {
 
@@ -23,7 +28,9 @@ public class profile extends javax.swing.JFrame {
         contactinfo = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         emailinfo = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
+        r = new javax.swing.JLabel();
+        pp = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -93,9 +100,13 @@ public class profile extends javax.swing.JFrame {
             }
         });
         jPanel1.add(emailinfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, 150, -1));
+        jPanel1.add(r, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 70, 20));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/dashboardimage.jpg"))); // NOI18N
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 530));
+        pp.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\projectimage\\profilepic.png")); // NOI18N
+        jPanel1.add(pp, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, 100, 90));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\projectimage\\dashboardimage.jpg")); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 530));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -135,10 +146,21 @@ public class profile extends javax.swing.JFrame {
 
     private void updateprofileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateprofileActionPerformed
         // TODO add your handling code here:
+        ProfileController asd = new ProfileController();
+        List <profilemod> details = asd.getalldetails();
+        ArrayList <String> str = new ArrayList<>();
+        str.add(0,"hello");
+        for(profilemod alldetails : details){
+            str.add(alldetails.getid(),alldetails.getusername());
+            System.out.println(alldetails.getid() + alldetails.getusername());
+        }
+        profilemod profile = new profilemod();
+        int id = profile.getid();
         
-//        ProfileController controller = new ProfileController();
-//       controller.profilemod(userinfo.getText(),emailinfo.getText(),contactinfo.getText());
-        
+       ProfileController controller = new ProfileController();
+       controller.updateprofilemod(id,userinfo.getText(),emailinfo.getText(),contactinfo.getText());
+       
+       System.out.println("profile" );
     }//GEN-LAST:event_updateprofileActionPerformed
 
     /**
@@ -182,10 +204,12 @@ public class profile extends javax.swing.JFrame {
     public javax.swing.JTextField emailinfo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton logout;
+    private javax.swing.JButton pp;
+    private javax.swing.JLabel r;
     private javax.swing.JButton updateprofile;
     public javax.swing.JTextField userinfo;
     // End of variables declaration//GEN-END:variables

@@ -1,25 +1,22 @@
-
 package model;
 
-public class profilemod {
-        private int id;
+public class usermodel {
+        
         private String Username;
         private String Email;
         private String Contact;
         
-        public profilemod() {
+        public usermodel() {
     
         }
         
-        public profilemod(int id, String username,String email,String contact){
-            this.id=id;
+        public usermodel( String username,String email,String contact){
+            
             this.Username=username;
             this.Email=email;
             this.Contact=contact;
             
-        }
-        public void setid(int id){
-            this.id=id;
+        
         }
        
         public void setusername(String username){
@@ -31,9 +28,6 @@ public class profilemod {
         public void setcontact(String contact){
             this.Contact=contact;
         }
-         public int getid(){
-            return this.id;
-        }
         public String getusername(){
             return this.Username;
         }
@@ -44,6 +38,4 @@ public class profilemod {
             return this.Contact;
         }   
     }
-
-
 
