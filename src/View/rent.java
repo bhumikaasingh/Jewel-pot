@@ -2,44 +2,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-<<<<<<< HEAD
-package LoginPage;
-
-=======
-<<<<<<< HEAD
 package View;
 import javax.swing.*;
-=======
-package LoginPage;
 
->>>>>>> aayush
->>>>>>> origin
+
 /**
  *
- * @author lucif
- */
-<<<<<<< HEAD
-public class Selling extends javax.swing.JFrame {
-=======
-<<<<<<< HEAD
-public class rent extends javax.swing.JFrame {
-=======
-public class Selling extends javax.swing.JFrame {
->>>>>>> aayush
->>>>>>> origin
 
-    /**
-     * Creates new form Selling
-     */
-<<<<<<< HEAD
-    public Selling() {
-=======
-<<<<<<< HEAD
-    public rent() {
-=======
-    public Selling() {
->>>>>>> aayush
->>>>>>> origin
+ */
+
+public class rent extends javax.swing.JFrame {
+
+    public rent () {
+
         initComponents();
     }
 
@@ -53,28 +28,16 @@ public class Selling extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> origin
         jTextField5 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField1 = new javax.swing.JTextField();
-<<<<<<< HEAD
-=======
->>>>>>> aayush
->>>>>>> origin
         jButton11 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
         jTextField3 = new javax.swing.JTextField();
         jTextField6 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -85,8 +48,6 @@ public class Selling extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-=======
->>>>>>> origin
         jButton4 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -142,24 +103,13 @@ public class Selling extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, 220, 40));
-<<<<<<< HEAD
-=======
->>>>>>> aayush
->>>>>>> origin
 
         jButton11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton11ActionPerformed(evt);
             }
         });
-<<<<<<< HEAD
         getContentPane().add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 40, 100, 60));
-=======
-<<<<<<< HEAD
-=======
-        getContentPane().add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 40, 100, 60));
->>>>>>> aayush
->>>>>>> origin
 
         jButton9.setBackground(new java.awt.Color(204, 204, 204));
         jButton9.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
@@ -170,14 +120,7 @@ public class Selling extends javax.swing.JFrame {
                 jButton9ActionPerformed(evt);
             }
         });
-<<<<<<< HEAD
         getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 50, 190, 50));
-=======
-<<<<<<< HEAD
-=======
-        getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 50, 190, 50));
->>>>>>> aayush
->>>>>>> origin
 
         jButton8.setBackground(new java.awt.Color(204, 204, 204));
         jButton8.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
@@ -188,14 +131,7 @@ public class Selling extends javax.swing.JFrame {
                 jButton8ActionPerformed(evt);
             }
         });
-<<<<<<< HEAD
         getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 50, 140, 50));
-=======
-<<<<<<< HEAD
-=======
-        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 50, 140, 50));
->>>>>>> aayush
->>>>>>> origin
 
         jButton7.setBackground(new java.awt.Color(204, 204, 204));
         jButton7.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
@@ -206,14 +142,7 @@ public class Selling extends javax.swing.JFrame {
                 jButton7ActionPerformed(evt);
             }
         });
-<<<<<<< HEAD
         getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 160, 50));
-=======
-<<<<<<< HEAD
-=======
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 160, 50));
->>>>>>> aayush
->>>>>>> origin
 
         jButton6.setBackground(new java.awt.Color(255, 153, 102));
         jButton6.setFont(new java.awt.Font("Tempus Sans ITC", 1, 24)); // NOI18N
@@ -224,14 +153,7 @@ public class Selling extends javax.swing.JFrame {
                 jButton6ActionPerformed(evt);
             }
         });
-<<<<<<< HEAD
         getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 510, 250, 40));
-=======
-<<<<<<< HEAD
-=======
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 510, 250, 40));
->>>>>>> aayush
->>>>>>> origin
 
         jButton5.setBackground(new java.awt.Color(255, 153, 102));
         jButton5.setFont(new java.awt.Font("Tempus Sans ITC", 1, 24)); // NOI18N
@@ -242,9 +164,6 @@ public class Selling extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
         jLabel3.setText("Location:");
@@ -342,8 +261,6 @@ public class Selling extends javax.swing.JFrame {
                             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))))
         );
-=======
->>>>>>> origin
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 510, 250, 40));
 
         jButton4.setBackground(new java.awt.Color(204, 204, 204));
@@ -385,109 +302,10 @@ public class Selling extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 320, 250, 50));
-<<<<<<< HEAD
-=======
->>>>>>> aayush
->>>>>>> origin
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> origin
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-<<<<<<< HEAD
-=======
->>>>>>> aayush
->>>>>>> origin
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-                                      
-
-=======
->>>>>>> aayush
->>>>>>> origin
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
-
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
-
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
-
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton9ActionPerformed
-
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> origin
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
-
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
-
-<<<<<<< HEAD
-=======
->>>>>>> aayush
->>>>>>> origin
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton11ActionPerformed
-
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-=======
->>>>>>> aayush
->>>>>>> origin
-    /**
-     * @param args the command line arguments
-     */
+   
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -515,44 +333,27 @@ public class Selling extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-<<<<<<< HEAD
-                new Selling().setVisible(true);
-=======
-<<<<<<< HEAD
+
                 new rent().setVisible(true);
-=======
-                new Selling().setVisible(true);
->>>>>>> aayush
->>>>>>> origin
+
+                new rent ().setVisible(true);
+
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
     private javax.swing.JButton jButton11;
-=======
->>>>>>> origin
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-<<<<<<< HEAD
-=======
->>>>>>> aayush
->>>>>>> origin
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -561,15 +362,8 @@ public class Selling extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField6;
-=======
->>>>>>> origin
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
-<<<<<<< HEAD
-=======
->>>>>>> aayush
->>>>>>> origin
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration 
+//GEN-END:variables
 }
