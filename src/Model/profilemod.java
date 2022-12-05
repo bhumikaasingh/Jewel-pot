@@ -6,16 +6,17 @@ public class profilemod {
         private String Username;
         private String Email;
         private String Contact;
-        
+        private byte[] picture;
         public profilemod() {
     
         }
         
-        public profilemod(int id, String username,String email,String contact){
+        public profilemod(int id, String username,String email,String contact,byte[] image){
             this.id=id;
             this.Username=username;
             this.Email=email;
             this.Contact=contact;
+            this.picture = image;
             
         }
         public void setid(int id){
@@ -43,6 +44,9 @@ public class profilemod {
         public String getcontact(){
             return this.Contact;
         }   
+        public byte[] getImage(){
+            return this.picture;
+        }
     }
 
 

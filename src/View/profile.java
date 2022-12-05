@@ -2,14 +2,24 @@ package View;
 
 
 import Controller.ProfileController;
+//import com.mysql.cj.xdevapi.Statement;
+import com.sun.jdi.connect.spi.Connection;
+import java.awt.Image;
+import java.io.ByteArrayOutputStream;
+import java.io.*;
+//import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import model.profilemod;
-
-
+import database.DbConnection;
+import java.sql.*;
 
 public class profile extends javax.swing.JFrame {
-
+       String filename = null;
+       byte[] person_image = null;
        public profile() {
         initComponents();
     }
@@ -29,7 +39,8 @@ public class profile extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         emailinfo = new javax.swing.JTextField();
         r = new javax.swing.JLabel();
-        pp = new javax.swing.JButton();
+        lbl_image = new javax.swing.JLabel();
+        profileimage = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -101,11 +112,17 @@ public class profile extends javax.swing.JFrame {
         });
         jPanel1.add(emailinfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, 150, -1));
         jPanel1.add(r, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 70, 20));
+        jPanel1.add(lbl_image, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 100, 90));
 
-        pp.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\projectimage\\profilepic.png")); // NOI18N
-        jPanel1.add(pp, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, 100, 90));
+        profileimage.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\projectimage\\profilepic.png")); // NOI18N
+        profileimage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                profileimageActionPerformed(evt);
+            }
+        });
+        jPanel1.add(profileimage, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 100, 90));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\projectimage\\dashboardimage.jpg")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon("D:\\jewelleryManagement\\src\\View\\dashboardimage.jpg")); // NOI18N
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 530));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -124,6 +141,18 @@ public class profile extends javax.swing.JFrame {
 
     private void editProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editProfileActionPerformed
         // TODO add your handling code here:
+        
+//        try{
+//            String username = "root";
+//            String password = "4312@LR#1234";
+//            Class.forName("com.mysql.cj.jdbc.Driver");
+//            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/registration");
+//            String query1 = "SELECT * FROM register";
+//            Statement st = con.createstatement();
+//           
+//        }catch(Exception e){
+//        }
+        
     }//GEN-LAST:event_editProfileActionPerformed
     
          
@@ -162,6 +191,32 @@ public class profile extends javax.swing.JFrame {
        
        System.out.println("profile" );
     }//GEN-LAST:event_updateprofileActionPerformed
+
+    private void profileimageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileimageActionPerformed
+        // TODO add your handling code here:
+        JFileChooser chooser = new JFileChooser();
+        chooser.showOpenDialog(null);
+        File f = chooser.getSelectedFile();
+        filename = f.getAbsolutePath();
+        ImageIcon imageicon = new ImageIcon(new ImageIcon(filename).getImage().getScaledInstance(lbl_image.getWidth(),lbl_image.getHeight(),Image.SCALE_SMOOTH));
+        lbl_image.setIcon(imageicon);
+        try{
+            File image = new File(filename);
+            FileInputStream fis = new FileInputStream(image);
+            ByteArrayOutputStream bos = new ByteArrayOutputStream();
+            byte[] buff = new byte[1024];
+            
+            for(int readNum;(readNum=fis.read(buff)) !=-1;){
+                bos.write(buff,0,readNum);
+                
+            }
+            person_image = bos.toByteArray();
+        
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+        
+    }//GEN-LAST:event_profileimageActionPerformed
 
     /**
      * @param args the command line arguments
@@ -207,8 +262,9 @@ public class profile extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lbl_image;
     private javax.swing.JButton logout;
-    private javax.swing.JButton pp;
+    private javax.swing.JButton profileimage;
     private javax.swing.JLabel r;
     private javax.swing.JButton updateprofile;
     public javax.swing.JTextField userinfo;
