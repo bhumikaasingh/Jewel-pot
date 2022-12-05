@@ -1,21 +1,23 @@
 package View;
 
 
-import Controller.ProfileController;
+
 //import com.mysql.cj.xdevapi.Statement;
-import com.sun.jdi.connect.spi.Connection;
+//import com.sun.jdi.connect.spi.Connection;
+//import database.DbConnection;
+//import java.sql.*;
+//import java.io.FileInputStream;
+import Controller.ProfileController;
 import java.awt.Image;
 import java.io.ByteArrayOutputStream;
 import java.io.*;
-//import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import model.profilemod;
-import database.DbConnection;
-import java.sql.*;
+
 
 public class profile extends javax.swing.JFrame {
        String filename = null;

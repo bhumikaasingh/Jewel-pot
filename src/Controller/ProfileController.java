@@ -33,9 +33,9 @@ public class ProfileController{
             String query = ("Select * from register ");
             JdbcRowSet rowset = RowSetProvider.newFactory().createJdbcRowSet();
             try{
-            rowset.setUrl("jdbc:mysql://localhost:3306/registration");  
-            rowset.setUsername("root");  
-            rowset.setPassword("4312@LR#1234");  
+            rowset.setUrl("jdbc:mysql://db4free.net:3306/jewelspots");  
+            rowset.setUsername("jewelspots");  
+            rowset.setPassword("jewelspots");  
 
             rowset.setCommand("select * from register");  
             rowset.execute(); 
