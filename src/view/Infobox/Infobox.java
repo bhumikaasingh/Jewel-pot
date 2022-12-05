@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view.Infobox;
-
+import database.DbConnection;
 /**
  *
  * @author lucif
@@ -27,9 +27,9 @@ public class Infobox extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
+        typ = new javax.swing.JTextField();
+        unit = new javax.swing.JTextField();
+        cat = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -44,26 +44,26 @@ public class Infobox extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        typ.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                typActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, 200, 30));
+        jPanel1.add(typ, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, 200, 30));
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        unit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                unitActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 200, 30));
+        jPanel1.add(unit, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 200, 30));
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        cat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                catActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 200, 30));
+        jPanel1.add(cat, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 200, 30));
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 22)); // NOI18N
         jLabel5.setText("Unit Price");
@@ -121,19 +121,26 @@ public class Infobox extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        DbConnection dbConnection;
+        String cate=cat.getText();
+        String u_price=unit.getText();
+        String type_=typ.getText();
+        String insertQuery=String.format("INSERT INTO info_box VALUES('%s','%s','%s')",cate,u_price,type_);
+        dbConnection = new DbConnection();
+        int  result = dbConnection.manipulate(insertQuery);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void catActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_catActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_catActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void unitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_unitActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_unitActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void typActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_typActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_typActionPerformed
 
     /**
      * @param args the command line arguments
@@ -171,6 +178,7 @@ public class Infobox extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField cat;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -181,8 +189,7 @@ public class Infobox extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField typ;
+    private javax.swing.JTextField unit;
     // End of variables declaration//GEN-END:variables
 }
