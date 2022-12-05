@@ -4,6 +4,8 @@
  */
 package LoginPage;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author lucif
@@ -93,12 +95,14 @@ public class Login extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        try{
-            Class.forName("com.mysql.jdbc.driver");
-             
+        if (jTextField1.getText().equals("")) {
+            JOptionPane.showMessageDialog(null,"Please fill out required details");
         }
-        catch(Exception e){
-             
+        else if(jTextField2.getText().equals("")){
+            JOptionPane.showMessageDialog(null,"Please fill out required details");
+        } 
+        else{
+            JOptionPane.showMessageDialog(null,"Wrong email or password!!","Message",JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 
