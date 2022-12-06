@@ -1,16 +1,7 @@
 
 package View;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 
-/**
- *
- * @author DELL
- * 
- */
 
 
 //import javax.swing.*;
@@ -174,8 +165,7 @@ public class Registration extends javax.swing.JFrame {
        Profile.emailinfo.setText(b.getText());
        Profile.contactinfo.setText(c.getText());
        Profile.setVisible(true);
-       
-//       
+              
        if(d.getText().equals(e.getText())){
         Student so=new Student(a.getText(),b.getText(),c.getText(),d.getText(),e.getText());
         registercontroller sc=new registercontroller();

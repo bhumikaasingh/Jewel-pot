@@ -1,12 +1,4 @@
 package View;
-
-
-
-//import com.mysql.cj.xdevapi.Statement;
-//import com.sun.jdi.connect.spi.Connection;
-//import database.DbConnection;
-//import java.sql.*;
-//import java.io.FileInputStream;
 import Controller.ProfileController;
 import java.awt.Image;
 import java.io.ByteArrayOutputStream;
@@ -143,17 +135,6 @@ public class profile extends javax.swing.JFrame {
 
     private void editProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editProfileActionPerformed
         // TODO add your handling code here:
-        
-//        try{
-//            String username = "root";
-//            String password = "4312@LR#1234";
-//            Class.forName("com.mysql.cj.jdbc.Driver");
-//            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/registration");
-//            String query1 = "SELECT * FROM register";
-//            Statement st = con.createstatement();
-//           
-//        }catch(Exception e){
-//        }
         
     }//GEN-LAST:event_editProfileActionPerformed
     
