@@ -9,12 +9,6 @@ import javax.swing.*;
 
 import java.sql.*;
 
-
-
-
-
-
-
 import javax.swing.*;
 
 import java.sql.*;
@@ -44,9 +38,8 @@ public class DbConnection {
 
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            connection = DriverManager.getConnection(
+            connection = DriverManager.getConnection( "jdbc:mysql://db4free.net/jewelspots",username,password);
 
-                    "jdbc:mysql://db4free.net/jewelspots",username,password);
 
 
 

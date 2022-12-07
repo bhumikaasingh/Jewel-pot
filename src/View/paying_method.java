@@ -61,6 +61,11 @@ public class paying_method extends javax.swing.JFrame {
 
         jComboBox1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cash", "Card", "Online" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 320, 140, 56));
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 390, 172, 56));
 
@@ -85,6 +90,10 @@ public class paying_method extends javax.swing.JFrame {
         int  result = dbConnection.manipulate(insertQuery);
 
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
     /**
      * @param args the command line arguments

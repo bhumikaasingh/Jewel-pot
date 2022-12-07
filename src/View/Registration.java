@@ -77,6 +77,7 @@ public class Registration extends javax.swing.JFrame {
         jLabel3.setText("Email:");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 130, 78, -1));
 
+        a.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
         a.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 aActionPerformed(evt);
@@ -84,6 +85,7 @@ public class Registration extends javax.swing.JFrame {
         });
         jPanel1.add(a, new org.netbeans.lib.awtextra.AbsoluteConstraints(196, 152, 203, 32));
 
+        c.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
         c.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cActionPerformed(evt);
@@ -91,6 +93,7 @@ public class Registration extends javax.swing.JFrame {
         });
         jPanel1.add(c, new org.netbeans.lib.awtextra.AbsoluteConstraints(196, 310, 203, 30));
 
+        d.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
         d.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dActionPerformed(evt);
@@ -98,6 +101,7 @@ public class Registration extends javax.swing.JFrame {
         });
         jPanel1.add(d, new org.netbeans.lib.awtextra.AbsoluteConstraints(783, 310, 203, 30));
 
+        b.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
         b.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bActionPerformed(evt);
@@ -116,6 +120,8 @@ public class Registration extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel6.setText("Confirm Password:");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(555, 359, 133, -1));
+
+        e.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
         jPanel1.add(e, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 382, 180, 31));
 
         jButton1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -162,7 +168,14 @@ public class Registration extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
+      
+       profile Profile = new profile();
+       Profile.userinfo.setText(a.getText());
+       Profile.emailinfo.setText(b.getText());
+       Profile.contactinfo.setText(c.getText());
+       Profile.setVisible(true);
+       
+//       
        if(d.getText().equals(e.getText())){
         Student so=new Student(a.getText(),b.getText(),c.getText(),d.getText(),e.getText());
         registercontroller sc=new registercontroller();
@@ -171,67 +184,31 @@ public class Registration extends javax.swing.JFrame {
         if(insertStudent>0){
             System.out.println("Registered Successfully!!!");
             JOptionPane.showMessageDialog(this,"Registered!");
-            
-        }else{
-            System.out.println("User Already Exist!!!");
-        }  
+        }
         
-        }else{
+        else 
+        {
+         System.out.println("Fill the details!!!");  
+         JOptionPane.showMessageDialog(this,"Fill the details!");
+        }
+        
+        }
+       
+        else{
             System.out.println("incorrect password and confirmpassword!!");
             JOptionPane.showMessageDialog(this,"Password and ConfirmPassword Didn't match");
        }
-//                 try{
-//            String m=a.getName().trim();
-//            String n=b.getName().trim();
-//            String o=c.getName().trim();
-//            String p=d.getName().trim();
-//            String q=e.getName().trim();
-//            Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/registration","root","4312@LR#1234");
-//            Statement st= con.createStatement();
-//            st.execute("insert into register values('"+m+"', '"+n+"', '"+o+"', '"+p+"', '"+q+",)");
-//            if (con!=null){
-//                System.out.println("registered successfully");          
-//            }else{
-//                System.out.println("Error! fill the detail");
-//            }
-//            JOptionPane.showMessageDialog(this,"Registerd successfully!!");
-//        }catch(Exception e){
-//            
-//        }
+       
 
         
-        
+       
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Registration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Registration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Registration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Registration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
         
-
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Registration().setVisible(true);

@@ -4,6 +4,8 @@
  */
 package View;
 
+import database.DbConnection;
+
 /**
  *
  * @author Dell
@@ -30,11 +32,11 @@ public class Rent extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        rentd = new javax.swing.JTextField();
+        location_ = new javax.swing.JTextField();
+        returnd = new javax.swing.JTextField();
         jButton7 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        contact_ = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -70,15 +72,15 @@ public class Rent extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel4.setText("Returning date :");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(67, 321, 181, 48));
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(248, 281, 128, 31));
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(697, 285, 111, -1));
+        getContentPane().add(rentd, new org.netbeans.lib.awtextra.AbsoluteConstraints(248, 281, 128, 31));
+        getContentPane().add(location_, new org.netbeans.lib.awtextra.AbsoluteConstraints(697, 285, 111, -1));
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        returnd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                returndActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(254, 334, 134, 32));
+        getContentPane().add(returnd, new org.netbeans.lib.awtextra.AbsoluteConstraints(254, 334, 134, 32));
 
         jButton7.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jButton7.setText("Cancel");
@@ -89,12 +91,12 @@ public class Rent extends javax.swing.JFrame {
         });
         getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 500, 130, -1));
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        contact_.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                contact_ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(697, 226, 111, -1));
+        getContentPane().add(contact_, new org.netbeans.lib.awtextra.AbsoluteConstraints(697, 226, 111, -1));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel1.setText("Contact No :");
@@ -136,16 +138,24 @@ public class Rent extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void returndActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returndActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_returndActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void contact_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contact_ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_contact_ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
+        DbConnection dbConnection;
+        String con=contact_.getText();
+        String locate=location_.getText();
+        String rent_date=rentd.getText();
+        String return_date=returnd.getText();
+        String insertQuery=String.format("INSERT INTO rent VALUES('%s','%s','%s','%s')",con,locate,rent_date,return_date);
+        dbConnection = new DbConnection();
+        int  result = dbConnection.manipulate(insertQuery);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
@@ -188,6 +198,7 @@ public class Rent extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField contact_;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -199,9 +210,8 @@ public class Rent extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField location_;
+    private javax.swing.JTextField rentd;
+    private javax.swing.JTextField returnd;
     // End of variables declaration//GEN-END:variables
 }
