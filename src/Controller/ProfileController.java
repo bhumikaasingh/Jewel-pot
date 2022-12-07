@@ -42,8 +42,8 @@ public class ProfileController{
             
             
             
-            while (rowset.next()) { 
-                     
+            while (rowset.next()) {
+                
                     profilemod boom = new profilemod();
                     boom.setid(Integer.parseInt(rowset.getString(1)));
                     boom.setusername((rowset.getString(2)));
