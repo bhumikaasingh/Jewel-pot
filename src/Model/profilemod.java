@@ -47,6 +47,10 @@ public class profilemod {
         public byte[] getImage(){
             return this.picture;
         }
+
+    public String getimage() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     }
 
 

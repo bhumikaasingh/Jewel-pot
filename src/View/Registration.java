@@ -160,16 +160,16 @@ public class Registration extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
       
-       profile Profile = new profile();
-       Profile.userinfo.setText(a.getText());
-       Profile.emailinfo.setText(b.getText());
-       Profile.contactinfo.setText(c.getText());
-       Profile.setVisible(true);
+//       profile Profile = new profile();
+//       Profile.userinfo.setText(a.getText());
+//       Profile.emailinfo.setText(b.getText());
+//       Profile.contactinfo.setText(c.getText());
+//       Profile.setVisible(true);
               
        if(d.getText().equals(e.getText())){
-        Student so=new Student(a.getText(),b.getText(),c.getText(),d.getText(),e.getText());
-        registercontroller sc=new registercontroller();
-        int insertStudent=sc.insertStudent(so);
+            Student so=new Student(a.getText(),b.getText(),c.getText(),d.getText(),e.getText());
+            registercontroller sc=new registercontroller();
+            int insertStudent=sc.insertStudent(so);
         
         if(insertStudent>0){
             System.out.println("Registered Successfully!!!");
@@ -178,8 +178,8 @@ public class Registration extends javax.swing.JFrame {
         
         else 
         {
-         System.out.println("Fill the details!!!");  
-         JOptionPane.showMessageDialog(this,"Fill the details!");
+         System.out.println("Registered!!!");  
+         JOptionPane.showMessageDialog(this,"Registered!");
         }
         
         }
