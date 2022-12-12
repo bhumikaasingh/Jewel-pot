@@ -59,6 +59,7 @@ ResultSet rs;
         profileimage = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         labelpath = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -149,6 +150,14 @@ ResultSet rs;
             }
         });
         jPanel1.add(labelpath, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 0, -1, -1));
+
+        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\projectimage\\backimage-removebg-preview.png")); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, 40, 30));
 
         jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\projectimage\\dashboardimage.jpg")); // NOI18N
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 530));
@@ -255,11 +264,19 @@ ResultSet rs;
         
     }//GEN-LAST:event_labelpathActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        Dashbord das = new Dashbord();
+        das.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new profile().setVisible(true);
                 labelpath.setVisible(false);
+                
             }
         });
     }
@@ -268,6 +285,7 @@ ResultSet rs;
     public javax.swing.JTextField contactinfo;
     private javax.swing.JButton editProfile;
     public javax.swing.JTextField emailinfo;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

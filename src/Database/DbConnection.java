@@ -33,14 +33,8 @@ public class DbConnection {
 
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            connection = DriverManager.getConnection( "jdbc:mysql://db4free.net/jewelspots",username,password);
-
-<<<<<<< HEAD
+            connection = DriverManager.getConnection( 
                     "jdbc:mysql://db4free.net:3306/jewelspots",username,password);
-=======
->>>>>>> 79aa40bceb83c11fade728bf4ebe9a9571503776
-
-
 
                     if(connection!=null){
 
