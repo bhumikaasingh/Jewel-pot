@@ -1,8 +1,5 @@
 package View;
 import Controller.ProfileController;
-import controller.profileimageController;
-import java.awt.Image;
-import java.io.ByteArrayOutputStream;
 import java.awt.Image;
 import java.io.*;
 import java.io.InputStream;
@@ -13,7 +10,6 @@ import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import model.profilemod;
-import model.imagemod;
 import java.sql.*;
 import javax.swing.ImageIcon;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -252,39 +248,6 @@ ResultSet rs;
                 Image img = ii.getImage().getScaledInstance(100,75,Image.SCALE_SMOOTH);
                 labelimage.setIcon(new ImageIcon(img));
             }
-//             filename = f.getAbsolutePath();
-            
-            
-//            try{
-//            File image = new File(filename);
-//            FileInputStream fis = new FileInputStream(image);
-//            ByteArrayOutputStream bos = new ByteArrayOutputStream();
-//            byte[] buff = new byte[1024];
-//            
-//            for(int readNum;(readNum=fis.read(buff)) !=-1;){
-//                bos.write(buff,0,readNum);
-//                
-//            }
-//            pimage = bos.toByteArray();
-////        
-//        }catch(Exception e){
-//            JOptionPane.showMessageDialog(null, e);
-//        }
-//            
-//            imagemod ig = new imagemod(labelimage.getText());
-//            profileimageController sc = new profileimageController();
-//            int insertimagemod = sc.insertimagemod(ig);
-//            if(insertimagemod>0){
-//                System.out.println("profile uploaded");
-//                JOptionPane.showMessageDialog(this,"profile uploaded");
-//            }else{
-//                JOptionPane.showMessageDialog(this, "Error Occured");
-//            }
-//    
-            
-               
-//     }
- 
     }//GEN-LAST:event_profileimageActionPerformed
 
     private void labelpathActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_labelpathActionPerformed
