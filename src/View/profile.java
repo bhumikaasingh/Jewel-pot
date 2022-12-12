@@ -146,6 +146,12 @@ ResultSet rs;
         });
         jPanel1.add(profileimage, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, -1, 30));
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 240, -1, -1));
+
+        labelpath.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                labelpathActionPerformed(evt);
+            }
+        });
         jPanel1.add(labelpath, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 0, -1, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\projectimage\\dashboardimage.jpg")); // NOI18N
@@ -281,10 +287,16 @@ ResultSet rs;
  
     }//GEN-LAST:event_profileimageActionPerformed
 
+    private void labelpathActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_labelpathActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_labelpathActionPerformed
+
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new profile().setVisible(true);
+                labelpath.setVisible(false);
             }
         });
     }
@@ -300,7 +312,7 @@ ResultSet rs;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelimage;
-    private javax.swing.JTextField labelpath;
+    public static javax.swing.JTextField labelpath;
     private javax.swing.JButton logout;
     private javax.swing.JButton profileimage;
     private javax.swing.JButton updateprofile;
