@@ -4,13 +4,11 @@
  */
 package View;
 
-/**
- *
- * @author Dell
- */
 public class Dashbord extends javax.swing.JFrame {
+   
     public Dashbord() {
         initComponents();
+       
     }
     
     
@@ -110,18 +108,24 @@ public class Dashbord extends javax.swing.JFrame {
         // TODO add your handling code here:
         contact ct= new contact();
         ct.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         profile pf = new profile();
         pf.setVisible(true);
+        this.setVisible(false);
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
+        
+        
         history hst = new history();
         hst.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     /**

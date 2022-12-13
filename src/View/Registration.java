@@ -164,7 +164,7 @@ public class Registration extends javax.swing.JFrame {
        Profile.userinfo.setText(a.getText());
        Profile.emailinfo.setText(b.getText());
        Profile.contactinfo.setText(c.getText());
-       Profile.setVisible(true);
+       Profile.setVisible(false);
               
        if(d.getText().equals(e.getText())){
             Student so=new Student(a.getText(),b.getText(),c.getText(),d.getText(),e.getText());
@@ -189,8 +189,10 @@ public class Registration extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,"Password and ConfirmPassword Didn't match");
        }
        
-
-        
+       
+        Dashbord das = new Dashbord();
+        das.setVisible(true);
+//        this.setVisible(false);
        
     }//GEN-LAST:event_jButton1ActionPerformed
 
