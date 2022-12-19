@@ -1,4 +1,5 @@
 package View;
+import database.DbConnection;
 import Controller.ProfileController;
 import java.awt.Image;
 import java.io.*;
@@ -222,6 +223,23 @@ ResultSet rs;
 
     private void updateprofileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateprofileActionPerformed
         // TODO add your handling code here:
+            String Username = userinfo.getText();
+            String Email = emailinfo.getText();
+            String Contact = contactinfo.getText();
+            int ID = 0;
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://db4free.net:3306/jewelspots","jewelspots","jewelspots");
+            String sql = String.format("UPDATE register SET  username = '%s' , email = '%s', contact = '%s'  WHERE id = '%d' " ,Username,Email,Contact,ID);
+            pst = con.prepareStatement("sql");
+            pst.execute();
+            JOptionPane.showMessageDialog(null,"Updated");
+
+            }
+            catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+            }
+
 
       ProfileController asd = new ProfileController();
         List <profilemod> details = asd.getalldetails();
