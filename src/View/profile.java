@@ -150,7 +150,7 @@ ResultSet rs;
                 labelpathActionPerformed(evt);
             }
         });
-        jPanel1.add(labelpath, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 0, -1, -1));
+        jPanel1.add(labelpath, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, -1, -1));
 
         jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\projectimage\\backimage-removebg-preview.png")); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
