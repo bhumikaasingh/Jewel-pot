@@ -164,7 +164,7 @@ public class Registration extends javax.swing.JFrame {
        Profile.userinfo.setText(a.getText());
        Profile.emailinfo.setText(b.getText());
        Profile.contactinfo.setText(c.getText());
-       Profile.setVisible(false);
+       Profile.setVisible(true);
        
        if(d.getText() != null){
        if(d.getText().equals(e.getText())){
