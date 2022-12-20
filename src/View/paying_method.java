@@ -4,7 +4,7 @@
  */
 package View;
 import database.DbConnection;
-import java.sql.DriverManager;
+//import java.sql.DriverManager;
 /**
  *
  * @author Dell

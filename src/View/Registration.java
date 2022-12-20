@@ -165,21 +165,25 @@ public class Registration extends javax.swing.JFrame {
        Profile.emailinfo.setText(b.getText());
        Profile.contactinfo.setText(c.getText());
        Profile.setVisible(true);
-              
+       
+       if(d.getText() != null){
        if(d.getText().equals(e.getText())){
+          
             Student so=new Student(a.getText(),b.getText(),c.getText(),d.getText(),e.getText());
             registercontroller sc=new registercontroller();
             int insertStudent=sc.insertStudent(so);
         
         if(insertStudent>0){
-            System.out.println("Registered Successfully!!!");
+            Dashbord das = new Dashbord();
+            das.setVisible(true);
+            System.out.println("Registered!!!");
             JOptionPane.showMessageDialog(this,"Registered!");
         }
         
         else 
         {
-         System.out.println("Registered!!!");  
-         JOptionPane.showMessageDialog(this,"Registered!");
+         System.out.println("Fill the details!!!");  
+         JOptionPane.showMessageDialog(this,"Fill the details!!");
         }
         
         }
@@ -189,9 +193,10 @@ public class Registration extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,"Password and ConfirmPassword Didn't match");
        }
        
-
-        
        
+       
+        this.setVisible(false);
+       }   
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
