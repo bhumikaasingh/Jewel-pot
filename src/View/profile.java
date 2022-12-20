@@ -1,4 +1,6 @@
 package View;
+              import javax.swing.*;
+import java.awt.*;
 import Controller.ProfileController;
 import java.awt.Image;
 import java.io.*;
@@ -13,8 +15,11 @@ import model.profilemod;
 import java.sql.*;
 import javax.swing.ImageIcon;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import model.Student;
 
 public class profile extends javax.swing.JFrame {
+    
+    
         File f = null;
         String path = null;
         private ImageIcon format = null;
@@ -22,9 +27,22 @@ public class profile extends javax.swing.JFrame {
         int s = 0;
         byte[] pimage = null;
         
+        static String username;
+        static String email;
+        static String contact;
+        static int id;
+
        public profile() {
         initComponents();
         Connect();
+    }
+       public profile(String username,String email,String contact ,int id) {
+        initComponents();
+        Connect();
+        this.username=username;
+        this.email=email;
+        this.contact=contact;
+        this.id=id;
     }
 Connection con;
 PreparedStatement pst;
@@ -177,7 +195,8 @@ ResultSet rs;
     }// </editor-fold>//GEN-END:initComponents
 
     private void editProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editProfileActionPerformed
-        // TODO add your handling code here:  
+        // TODO add your handling code here:
+        System.out.println(username);
         System.out.print("Image path -" + path);
        System.out.print("imageName -" + f.getName());
         File f = new File(path);
@@ -210,6 +229,9 @@ ResultSet rs;
 
     private void userinfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userinfoActionPerformed
         // TODO add your handling code here:
+        Student student = new Student();
+        userinfo.setText(student.getusername());
+        
     }//GEN-LAST:event_userinfoActionPerformed
 
     private void contactinfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contactinfoActionPerformed
@@ -274,17 +296,24 @@ ResultSet rs;
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new profile().setVisible(true);
+                new profile(username,contact,email,id).setVisible(true);
                 labelpath.setVisible(false);
+                userinfo.setText(username);
                 
-            }
+                
+  
+
+            
+}
+                
+            
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JTextField contactinfo;
+    public static javax.swing.JTextField contactinfo;
     private javax.swing.JButton editProfile;
-    public javax.swing.JTextField emailinfo;
+    public static javax.swing.JTextField emailinfo;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -297,6 +326,6 @@ ResultSet rs;
     private javax.swing.JButton logout;
     private javax.swing.JButton profileimage;
     private javax.swing.JButton updateprofile;
-    public javax.swing.JTextField userinfo;
+    public static javax.swing.JTextField userinfo;
     // End of variables declaration//GEN-END:variables
 }
