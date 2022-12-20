@@ -176,11 +176,11 @@ public class Registration extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
       
-       profile Profile = new profile();
-       Profile.userinfo.setText(a.getText());
-       Profile.emailinfo.setText(b.getText());
-       Profile.contactinfo.setText(c.getText());
-       Profile.setVisible(true);
+//       profile Profile = new profile();
+//       Profile.userinfo.setText(a.getText());
+//       Profile.emailinfo.setText(b.getText());
+//       Profile.contactinfo.setText(c.getText());
+//       Profile.setVisible(true);
 //       
        if(d.getText() != null){
        if(d.getText().equals(e.getText())){
