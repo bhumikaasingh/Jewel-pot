@@ -1,8 +1,11 @@
+
+//import Registration;
+
 package database;
 
 
 
-import javax.swing.*;
+
 
 import java.sql.*;
 
@@ -30,11 +33,8 @@ public class DbConnection {
 
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            connection = DriverManager.getConnection(
-
-                    "jdbc:mysql://db4free.net/jewelspots",username,password);
-
-
+            connection = DriverManager.getConnection( 
+                    "jdbc:mysql://db4free.net:3306/jewelspots",username,password);
 
                     if(connection!=null){
 
@@ -72,7 +72,11 @@ public class DbConnection {
 
         }catch (SQLIntegrityConstraintViolationException ex){
 
-            JOptionPane.showMessageDialog(null, "These details already exist!");
+
+//            JOptionPane.showMessageDialog(null,"");
+
+//            JOptionPane.showMessageDialog(null, "");
+
 
         }catch (SQLException e){
 
@@ -95,6 +99,7 @@ public class DbConnection {
         }catch (SQLException e){
 
             e.printStackTrace();
+
         }
 
         return resultSet;
@@ -107,9 +112,9 @@ public class DbConnection {
 
         new DbConnection();
 
-       
-
     }
 
-   
 }
+
+
+
