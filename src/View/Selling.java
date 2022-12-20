@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package view.Selling;
+package View;
 import javax.swing.JOptionPane;
 import database.DbConnection;
 
@@ -39,83 +39,85 @@ public class Selling extends javax.swing.JFrame {
         Home = new javax.swing.JButton();
         BuyNow = new javax.swing.JButton();
         Cancel = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         date.setBackground(new java.awt.Color(204, 204, 204));
-        date.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        date.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         date.setText("          YY/MM/DD");
-        date.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
+        date.setBorder(null);
         date.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dateActionPerformed(evt);
             }
         });
-        getContentPane().add(date, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 340, 250, 50));
+        getContentPane().add(date, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 320, 220, 30));
 
         jTextField5.setBackground(new java.awt.Color(234, 233, 233));
-        jTextField5.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        jTextField5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jTextField5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField5.setText("Contact No:");
         jTextField5.setBorder(null);
-        jTextField5.setOpaque(true);
         jTextField5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField5ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 190, 220, 40));
+        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, 140, 30));
 
         jTextField4.setBackground(new java.awt.Color(234, 233, 233));
-        jTextField4.setFont(new java.awt.Font("Microsoft JhengHei", 0, 24)); // NOI18N
+        jTextField4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField4.setText("Location:");
         jTextField4.setBorder(null);
-        jTextField4.setOpaque(true);
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 140, 220, 40));
+        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 140, 30));
 
         cont.setBackground(new java.awt.Color(204, 204, 204));
-        cont.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        cont.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
+        cont.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        cont.setBorder(null);
         cont.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 contActionPerformed(evt);
             }
         });
-        getContentPane().add(cont, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 200, 250, 50));
+        getContentPane().add(cont, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, 220, 30));
 
         loc.setBackground(new java.awt.Color(204, 204, 204));
-        loc.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        loc.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
+        loc.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        loc.setBorder(null);
         loc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 locActionPerformed(evt);
             }
         });
-        getContentPane().add(loc, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 130, 250, 50));
+        getContentPane().add(loc, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 370, 220, 30));
 
-        jTextField1.setBackground(new java.awt.Color(255, 153, 102));
-        jTextField1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jTextField1.setBackground(new java.awt.Color(204, 204, 204));
+        jTextField1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jTextField1.setText("Delievery Date  :");
         jTextField1.setBorder(null);
-        jTextField1.setOpaque(true);
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 220, 40));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 140, 30));
 
         jButton10.setBackground(java.awt.Color.lightGray);
-        jButton10.setIcon(new javax.swing.ImageIcon("C:\\Users\\lucif\\Desktop\\arr.png")); // NOI18N
-        getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 40, 140, 60));
+        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/backimage-removebg-preview.png"))); // NOI18N
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 0, 40, 40));
 
         ContactUs.setBackground(new java.awt.Color(204, 204, 204));
         ContactUs.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
@@ -126,7 +128,7 @@ public class Selling extends javax.swing.JFrame {
                 ContactUsActionPerformed(evt);
             }
         });
-        getContentPane().add(ContactUs, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 50, 190, 50));
+        getContentPane().add(ContactUs, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 190, 50));
 
         Profile.setBackground(new java.awt.Color(204, 204, 204));
         Profile.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
@@ -137,7 +139,7 @@ public class Selling extends javax.swing.JFrame {
                 ProfileActionPerformed(evt);
             }
         });
-        getContentPane().add(Profile, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 50, 140, 50));
+        getContentPane().add(Profile, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 0, 140, 50));
 
         Home.setBackground(new java.awt.Color(204, 204, 204));
         Home.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
@@ -148,7 +150,7 @@ public class Selling extends javax.swing.JFrame {
                 HomeActionPerformed(evt);
             }
         });
-        getContentPane().add(Home, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 160, 50));
+        getContentPane().add(Home, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 160, 50));
 
         BuyNow.setBackground(new java.awt.Color(255, 153, 102));
         BuyNow.setFont(new java.awt.Font("Tempus Sans ITC", 1, 24)); // NOI18N
@@ -159,7 +161,7 @@ public class Selling extends javax.swing.JFrame {
                 BuyNowActionPerformed(evt);
             }
         });
-        getContentPane().add(BuyNow, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 500, 250, 70));
+        getContentPane().add(BuyNow, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, 150, 50));
 
         Cancel.setBackground(new java.awt.Color(255, 153, 102));
         Cancel.setFont(new java.awt.Font("Tempus Sans ITC", 1, 24)); // NOI18N
@@ -170,10 +172,10 @@ public class Selling extends javax.swing.JFrame {
                 CancelActionPerformed(evt);
             }
         });
-        getContentPane().add(Cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 500, 250, 70));
+        getContentPane().add(Cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 490, 140, 50));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\lucif\\Desktop\\sad.png")); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1160, 660));
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\final abs\\Jewel-pot\\src\\View\\dashboardimage.jpg")); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 660));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -198,6 +200,9 @@ public class Selling extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Please fill out required details");
         } 
         else{
+            paying_method pay = new paying_method();
+            pay.setVisible(true);
+            this.setVisible(false);
             DbConnection dbConnection;
             String location=loc.getText();
             String dat=date.getText();
@@ -205,8 +210,9 @@ public class Selling extends javax.swing.JFrame {
             String insertQuery=String.format("INSERT INTO sell VALUES('%s','%s','%s')",location,dat,conta);
             dbConnection = new DbConnection();
             int  result = dbConnection.manipulate(insertQuery);
-            JOptionPane.showMessageDialog(null,"Purchase Confirmed!!");
+//            JOptionPane.showMessageDialog(null,"Purchase Confirmed!!");      
         }
+        
     }//GEN-LAST:event_BuyNowActionPerformed
     
     private void HomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeActionPerformed
@@ -240,6 +246,13 @@ public class Selling extends javax.swing.JFrame {
     private void dateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dateActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_dateActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+        AddJewel jew = new AddJewel();
+        jew.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton10ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -285,7 +298,7 @@ public class Selling extends javax.swing.JFrame {
     private javax.swing.JTextField cont;
     private javax.swing.JTextField date;
     private javax.swing.JButton jButton10;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;

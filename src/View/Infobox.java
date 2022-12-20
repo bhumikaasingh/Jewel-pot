@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package view.Infobox;
+package View;
 import database.DbConnection;
 /**
  *
@@ -101,8 +101,6 @@ public class Infobox extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 430, 100, 40));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\lucif\\Desktop\\login.jpg")); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1060, 610));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
