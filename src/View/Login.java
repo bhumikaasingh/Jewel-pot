@@ -134,7 +134,11 @@ public class Login extends javax.swing.JFrame {
                   
                 JOptionPane.showMessageDialog(this,"logged in sucessfully","logged in",JOptionPane.PLAIN_MESSAGE);
                   System.out.println("logged in");
+<<<<<<< HEAD
                   Dashbord das = new Dashbord();
+=======
+                  Dashbord das = new Dashbord(result.getString("username"),result.getString("email"),result.getString("contact"),result.getInt("id"));
+>>>>>>> lalit0
                     das.setVisible(true);
                     this.setVisible(false);
                     

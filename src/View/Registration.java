@@ -49,6 +49,8 @@ public class Registration extends javax.swing.JFrame {
         e = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
 
         jLabel8.setText("jLabel8");
 
@@ -58,15 +60,15 @@ public class Registration extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 2, 36)); // NOI18N
         jLabel1.setText("Register");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(563, 59, 142, 64));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 40, 142, 64));
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel2.setText("Username:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 127, 104, 20));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 104, 20));
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel3.setText("Email:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 130, 78, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 130, 78, -1));
 
         a.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
         a.addActionListener(new java.awt.event.ActionListener() {
@@ -74,7 +76,7 @@ public class Registration extends javax.swing.JFrame {
                 aActionPerformed(evt);
             }
         });
-        jPanel1.add(a, new org.netbeans.lib.awtextra.AbsoluteConstraints(196, 152, 203, 32));
+        jPanel1.add(a, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 203, 32));
 
         c.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
         c.addActionListener(new java.awt.event.ActionListener() {
@@ -82,7 +84,7 @@ public class Registration extends javax.swing.JFrame {
                 cActionPerformed(evt);
             }
         });
-        jPanel1.add(c, new org.netbeans.lib.awtextra.AbsoluteConstraints(196, 310, 203, 30));
+        jPanel1.add(c, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 203, 30));
 
         d.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
         d.addActionListener(new java.awt.event.ActionListener() {
@@ -90,7 +92,7 @@ public class Registration extends javax.swing.JFrame {
                 dActionPerformed(evt);
             }
         });
-        jPanel1.add(d, new org.netbeans.lib.awtextra.AbsoluteConstraints(783, 310, 203, 30));
+        jPanel1.add(d, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 230, 203, 30));
 
         b.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
         b.addActionListener(new java.awt.event.ActionListener() {
@@ -98,40 +100,54 @@ public class Registration extends javax.swing.JFrame {
                 bActionPerformed(evt);
             }
         });
-        jPanel1.add(b, new org.netbeans.lib.awtextra.AbsoluteConstraints(783, 152, 203, 32));
+        jPanel1.add(b, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, 203, 32));
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel4.setText("Contact no:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(196, 283, 104, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 104, -1));
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel5.setText("Password:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 290, 104, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 210, 104, -1));
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel6.setText("Confirm Password:");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(555, 359, 133, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 280, 133, -1));
 
         e.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
-        jPanel1.add(e, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 382, 180, 31));
+        jPanel1.add(e, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 300, 180, 31));
 
         jButton1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jButton1.setText("Continue");
+        jButton1.setText("Sign Up");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(554, 446, 133, 38));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 340, 133, 38));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/jewe.jpg"))); // NOI18N
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1170, 560));
+        jLabel7.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
+        jLabel7.setText("I have an account:");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 400, 110, -1));
+
+        jButton2.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
+        jButton2.setText("Login");
+        jButton2.setBorder(null);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 400, -1, 20));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\final abs\\Jewel-pot\\src\\View\\jewe.jpg")); // NOI18N
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, 530));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -165,7 +181,7 @@ public class Registration extends javax.swing.JFrame {
        Profile.emailinfo.setText(b.getText());
        Profile.contactinfo.setText(c.getText());
        Profile.setVisible(true);
-       
+//       
        if(d.getText() != null){
        if(d.getText().equals(e.getText())){
           
@@ -174,30 +190,44 @@ public class Registration extends javax.swing.JFrame {
             int insertStudent=sc.insertStudent(so);
         
         if(insertStudent>0){
-            Dashbord das = new Dashbord();
-            das.setVisible(true);
             System.out.println("Registered!!!");
             JOptionPane.showMessageDialog(this,"Registered!");
+            Login log = new Login();
+            log.setVisible(true);
+            this.setVisible(false);
         }
-        
-        else 
-        {
-         System.out.println("Fill the details!!!");  
-         JOptionPane.showMessageDialog(this,"Fill the details!!");
+        else {
+             if (a.getText().equals("")) { 
+                JOptionPane.showMessageDialog(null,"Fill the details!!");
         }
-        
+             if(b.getText().equals("")){
+                 JOptionPane.showMessageDialog(null,"Fill the details!!");
+             }
+             if(c.getText().equals("")){
+                 JOptionPane.showMessageDialog(null,"Fill the details!!");
+             }
+             if(d.getText().equals("")){
+                 JOptionPane.showMessageDialog(null,"Fill the details!!");
+             }
+             if(e.getText().equals("")){
+                 JOptionPane.showMessageDialog(null,"Fill the details!!");
+             }
         }
-       
-        else{
+       }
+       else {
             System.out.println("incorrect password and confirmpassword!!");
             JOptionPane.showMessageDialog(this,"Password and ConfirmPassword Didn't match");
        }
-       
-       
-       
-        this.setVisible(false);
+//        this.setVisible(false);
        }   
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        Login log = new Login();
+        log.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -218,6 +248,7 @@ public class Registration extends javax.swing.JFrame {
     private javax.swing.JTextField d;
     private javax.swing.JTextField e;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -226,6 +257,7 @@ public class Registration extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

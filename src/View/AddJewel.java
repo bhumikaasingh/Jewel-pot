@@ -6,6 +6,7 @@
  */
 package View;
 
+import View.Rent;
 import javax.swing.JFrame;
 
 /**
