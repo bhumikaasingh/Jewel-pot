@@ -6,7 +6,6 @@
  */
 package view.AddJewellry;
 
-import View.Rent;
 import javax.swing.JFrame;
 import view.Selling.Selling;
 
