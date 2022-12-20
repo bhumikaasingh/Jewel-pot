@@ -6,8 +6,11 @@ package View;
 
 public class Dashbord extends javax.swing.JFrame {
        static String username;
+       
         static String email;
+        
         static String contact;
+        
         static int id;
     public Dashbord() {
         
