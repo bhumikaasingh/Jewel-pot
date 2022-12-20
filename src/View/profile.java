@@ -129,7 +129,8 @@ public class profile extends javax.swing.JFrame {
          
 
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
-        // TODO add your handling code here:
+       // TODO add your handling code here:
+      
     }//GEN-LAST:event_logoutActionPerformed
 
     private void userinfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userinfoActionPerformed
