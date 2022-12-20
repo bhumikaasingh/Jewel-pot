@@ -112,6 +112,11 @@ public class Rent extends javax.swing.JFrame {
 
         jButton6.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jButton6.setText("Rent now");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 420, -1, -1));
 
         jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\final abs\\Jewel-pot\\src\\View\\backimage-removebg-preview.png")); // NOI18N
@@ -154,6 +159,13 @@ public class Rent extends javax.swing.JFrame {
         jew.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        paying_method pay = new paying_method();
+        pay.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments
