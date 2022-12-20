@@ -4,6 +4,7 @@
  */
 package View;
 import database.DbConnection;
+//import java.sql.DriverManager;
 /**
  *
  * @author Dell
@@ -92,6 +93,7 @@ public class paying_method extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+
         DbConnection dbConnection;
         Object payment= jComboBox1.getSelectedItem();
         String pay=payment.toString();

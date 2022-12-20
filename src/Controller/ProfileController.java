@@ -16,14 +16,11 @@ public class ProfileController{
             int Id = id;
             String Username = username;
             String Email = email;
-            String Contact= contact;
-
-//       
+            String Contact= contact;       
             String updateQuery = String.format("UPDATE register SET  username = '%s' , email = '%s', contact = '%s' WHERE id = %d " ,Username,Email,Contact,Id);
             dbconnection = new DbConnection();
             int result = dbconnection.manipulate(updateQuery);
-            return result;
-            
+            return result;  
     }
    
     public List <profilemod> getalldetails(){
@@ -33,25 +30,19 @@ public class ProfileController{
             String query = ("Select * from register ");
             JdbcRowSet rowset = RowSetProvider.newFactory().createJdbcRowSet();
             try{
-            rowset.setUrl("jdbc:mysql://localhost:3306/registration");  
-            rowset.setUsername("root");  
-            rowset.setPassword("4312@LR#1234");  
-
+            rowset.setUrl("jdbc:mysql://db4free.net:3306/jewelspots");  
+            rowset.setUsername("jewelspots");  
+            rowset.setPassword("jewelspots");  
             rowset.setCommand("select * from register");  
-            rowset.execute(); 
+            rowset.execute();
             
-            
-            
-            while (rowset.next()) { 
-                     
+            while (rowset.next()) {
                     profilemod boom = new profilemod();
                     boom.setid(Integer.parseInt(rowset.getString(1)));
                     boom.setusername((rowset.getString(2)));
                     boom.setemail(rowset.getString(3));
                     boom.setcontact(rowset.getString(4));
-                    detail.add(boom);
-                    
-                       
+                    detail.add(boom); 
                     System.out.println("Id: " + rowset.getString(1));  
                     System.out.println("Name: " + rowset.getString(2));
             }

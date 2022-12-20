@@ -1,19 +1,46 @@
 package View;
-
-
 import Controller.ProfileController;
+import java.awt.Image;
+import java.io.*;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import model.profilemod;
-
-
+import java.sql.*;
+import javax.swing.ImageIcon;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class profile extends javax.swing.JFrame {
-
+        File f = null;
+        String path = null;
+        private ImageIcon format = null;
+        String fname = null;
+        int s = 0;
+        byte[] pimage = null;
+        
        public profile() {
         initComponents();
+        Connect();
     }
+Connection con;
+PreparedStatement pst;
+ResultSet rs;
+    public void Connect(){
+           try {
+               Class.forName("com.mysql.cj.jdbc.Driver");
+               con = DriverManager.getConnection(
 
+                    "jdbc:mysql://db4free.net:3306/jewelspots","jewelspots","jewelspots");
+           } catch (ClassNotFoundException ex) {
+               Logger.getLogger(profile.class.getName()).log(Level.SEVERE, null, ex);
+           } catch (SQLException ex) {
+               Logger.getLogger(profile.class.getName()).log(Level.SEVERE, null, ex);
+           }
+    }   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -28,8 +55,11 @@ public class profile extends javax.swing.JFrame {
         contactinfo = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         emailinfo = new javax.swing.JTextField();
-        r = new javax.swing.JLabel();
-        pp = new javax.swing.JButton();
+        labelimage = new javax.swing.JLabel();
+        profileimage = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        labelpath = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -37,13 +67,13 @@ public class profile extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         editProfile.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
-        editProfile.setText("Edit Profile");
+        editProfile.setText("Save");
         editProfile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editProfileActionPerformed(evt);
             }
         });
-        jPanel1.add(editProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, -1, -1));
+        jPanel1.add(editProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 70, -1));
 
         updateprofile.setBackground(new java.awt.Color(0, 102, 255));
         updateprofile.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
@@ -100,10 +130,34 @@ public class profile extends javax.swing.JFrame {
             }
         });
         jPanel1.add(emailinfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, 150, -1));
-        jPanel1.add(r, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 70, 20));
 
-        pp.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\projectimage\\profilepic.png")); // NOI18N
-        jPanel1.add(pp, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, 100, 90));
+        labelimage.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\projectimage\\profilepic.png")); // NOI18N
+        jPanel1.add(labelimage, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 90, 80));
+
+        profileimage.setFont(new java.awt.Font("Times New Roman", 2, 12)); // NOI18N
+        profileimage.setText("Edit Profile");
+        profileimage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                profileimageActionPerformed(evt);
+            }
+        });
+        jPanel1.add(profileimage, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, -1, 30));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 240, -1, -1));
+
+        labelpath.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                labelpathActionPerformed(evt);
+            }
+        });
+        jPanel1.add(labelpath, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 0, -1, -1));
+
+        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\projectimage\\backimage-removebg-preview.png")); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, 40, 30));
 
         jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\projectimage\\dashboardimage.jpg")); // NOI18N
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 530));
@@ -123,10 +177,32 @@ public class profile extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void editProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editProfileActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here:  
+        System.out.print("Image path -" + path);
+       System.out.print("imageName -" + f.getName());
+        File f = new File(path);
+            try {
+                InputStream is = new FileInputStream(f);
+                pst = con.prepareStatement("INSERT INTO tbl_profile(imageName,imagepath,images)VALUES(?,?,?)");
+                pst.setString(1,f.getName());
+                pst.setString(2, path);
+                pst.setBlob(3, is);
+                int inserted = pst.executeUpdate();
+                if(inserted>0){
+                    JOptionPane.showMessageDialog(this,"image inserted successfully");
+                }
+                else{
+                   JOptionPane.showMessageDialog(this,"insert image first"); 
+                }
+                
+             } catch (FileNotFoundException ex) {
+                Logger.getLogger(profile.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(profile.class.getName()).log(Level.SEVERE, null, ex);
+            }   
+                
+          
     }//GEN-LAST:event_editProfileActionPerformed
-    
-         
 
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
        // TODO add your handling code here:
@@ -147,15 +223,16 @@ public class profile extends javax.swing.JFrame {
 
     private void updateprofileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateprofileActionPerformed
         // TODO add your handling code here:
-        ProfileController asd = new ProfileController();
+
+      ProfileController asd = new ProfileController();
         List <profilemod> details = asd.getalldetails();
         ArrayList <String> str = new ArrayList<>();
-        str.add(0,"hello");
-        for(profilemod alldetails : details){
+       str.add(0,"hello");
+       for(profilemod alldetails : details){
             str.add(alldetails.getid(),alldetails.getusername());
-            System.out.println(alldetails.getid() + alldetails.getusername());
+           System.out.println(alldetails.getid() + alldetails.getusername());
         }
-        profilemod profile = new profilemod();
+       profilemod profile = new profilemod();
         int id = profile.getid();
         
        ProfileController controller = new ProfileController();
@@ -164,37 +241,43 @@ public class profile extends javax.swing.JFrame {
        System.out.println("profile" );
     }//GEN-LAST:event_updateprofileActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
+    private void profileimageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileimageActionPerformed
+        // TODO add your handling code here:
+        
+            JFileChooser fileChooser = new JFileChooser();
+            fileChooser.showOpenDialog(null);
+            FileNameExtensionFilter fnwf = new FileNameExtensionFilter("PNG JPG and JPEG","png","jpeg","jpg");
+            fileChooser.addChoosableFileFilter(fnwf);
+            int load = fileChooser.showOpenDialog(null);
+            if (load==fileChooser.APPROVE_OPTION){
+                f = fileChooser.getSelectedFile();
+                
+                path = f.getAbsolutePath();
+                labelpath.setText(path);
+                ImageIcon ii = new ImageIcon(path);
+                Image img = ii.getImage().getScaledInstance(100,75,Image.SCALE_SMOOTH);
+                labelimage.setIcon(new ImageIcon(img));
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(profile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(profile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(profile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(profile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    }//GEN-LAST:event_profileimageActionPerformed
 
-        /* Create and display the form */
+    private void labelpathActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_labelpathActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_labelpathActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        Dashbord das = new Dashbord();
+        das.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new profile().setVisible(true);
+                labelpath.setVisible(false);
+                
             }
         });
     }
@@ -203,14 +286,17 @@ public class profile extends javax.swing.JFrame {
     public javax.swing.JTextField contactinfo;
     private javax.swing.JButton editProfile;
     public javax.swing.JTextField emailinfo;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel labelimage;
+    public static javax.swing.JTextField labelpath;
     private javax.swing.JButton logout;
-    private javax.swing.JButton pp;
-    private javax.swing.JLabel r;
+    private javax.swing.JButton profileimage;
     private javax.swing.JButton updateprofile;
     public javax.swing.JTextField userinfo;
     // End of variables declaration//GEN-END:variables
