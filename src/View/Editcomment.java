@@ -62,10 +62,14 @@ public class Editcomment extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+<<<<<<< HEAD:src/View/Editcomment.java
 <<<<<<< HEAD
         
 =======
 >>>>>>> lalit0
+=======
+        
+>>>>>>> 2491b610e9b603599777fcbb720e85046ed4a5e6:src/view/Editcomment/Editcomment.java
         new Comments().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
