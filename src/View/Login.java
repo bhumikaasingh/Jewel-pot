@@ -14,8 +14,14 @@ import model.Student;
  * @author lucif
  */
 public class Login extends javax.swing.JFrame {
+            String username;
 
-    /**
+            String email;
+
+            String contact;
+
+            int id;
+        /**
      * Creates new form Login
      */
     public Login() {
@@ -134,13 +140,16 @@ public class Login extends javax.swing.JFrame {
                   
                 JOptionPane.showMessageDialog(this,"logged in sucessfully","logged in",JOptionPane.PLAIN_MESSAGE);
                   System.out.println("logged in");
-                  Dashbord das = new Dashbord(result.getString("username"),result.getString("email"),result.getString("contact"),result.getInt("id"));
+                  Student student = new Student();
+                  
+                  
+                  
+                    Dashbord das = new Dashbord(result.getString("username"),result.getString("email"),result.getString("contact"),result.getInt("id"));
+                  
                     das.setVisible(true);
                     this.setVisible(false);
                     
-//                    System.out.println(result.getString("username"));
-//                    profile Profile = new profile(result.getString("username"),result.getString("email"),result.getString("contact"),result.getInt("id"));
-                    
+                    System.out.println(result.getString("username"));      
               }
           else{
                   if (jTextField1.getText().equals("")) {
