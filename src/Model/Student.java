@@ -8,6 +8,12 @@ public class Student {
         private String password ;
         private String confirmPassword;
         
+        public Student(int id,String username,String email,String contact){
+            this.id=id;
+            this.Username=username;
+            this.Email=email;
+            this.Contact=contact;
+        }
         public Student(){
         
         }
@@ -67,6 +73,10 @@ public class Student {
             return this.confirmPassword;
        
         }
+
+    public String getusername(String username) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     }
 
 

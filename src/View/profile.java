@@ -1,17 +1,12 @@
 package View;
-              import javax.swing.*;
-import java.awt.*;
 import Controller.ProfileController;
 import java.awt.Image;
 import java.io.*;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-import model.profilemod;
 import java.sql.*;
 import javax.swing.ImageIcon;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -230,7 +225,7 @@ ResultSet rs;
     private void userinfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userinfoActionPerformed
         // TODO add your handling code here:
         Student student = new Student();
-        userinfo.setText(student.getusername());
+        userinfo.setText(student.getusername(username));
         
     }//GEN-LAST:event_userinfoActionPerformed
 
@@ -244,22 +239,9 @@ ResultSet rs;
 
     private void updateprofileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateprofileActionPerformed
         // TODO add your handling code here:
-
-      ProfileController asd = new ProfileController();
-        List <profilemod> details = asd.getalldetails();
-        ArrayList <String> str = new ArrayList<>();
-       str.add(0,"hello");
-       for(profilemod alldetails : details){
-            str.add(alldetails.getid(),alldetails.getusername());
-           System.out.println(alldetails.getid() + alldetails.getusername());
-        }
-       profilemod profile = new profilemod();
-        int id = profile.getid();
-        
-       ProfileController controller = new ProfileController();
-       controller.updateprofilemod(id,userinfo.getText(),emailinfo.getText(),contactinfo.getText());
-       
-       System.out.println("profile" );
+        ProfileController profile=new ProfileController();
+        profile.updateprofilemod(id, userinfo.getText(), emailinfo.getText(), contactinfo.getText());
+        JOptionPane.showMessageDialog(this,"Updated Successfully!!");
     }//GEN-LAST:event_updateprofileActionPerformed
 
     private void profileimageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileimageActionPerformed
@@ -299,15 +281,15 @@ ResultSet rs;
                 new profile(username,contact,email,id).setVisible(true);
                 labelpath.setVisible(false);
                 userinfo.setText(username);
-                
-                
-  
-
-            
 }
-                
-            
+    
         });
+    }
+    public static void SettingText(){
+        userinfo.setText(username);
+        emailinfo.setText(email);
+        contactinfo.setText(contact);
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -1,20 +1,7 @@
 
 package View;
-
-
-
-
-//import javax.swing.*;
-//
-//import java.sql.*;
-//
-//import javax.swing.*;
-//
-//import java.sql.*;
-
 import controller.registercontroller;
 import javax.swing.JOptionPane;
-
 import model.Student;
 public class Registration extends javax.swing.JFrame {
 
@@ -174,14 +161,7 @@ public class Registration extends javax.swing.JFrame {
     }//GEN-LAST:event_bActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-      
-       profile Profile = new profile();
-       Profile.userinfo.setText(a.getText());
-       Profile.emailinfo.setText(b.getText());
-       Profile.contactinfo.setText(c.getText());
-       Profile.setVisible(true);
-//       
+        // TODO add your handling code here: 
        if(d.getText() != null){
        if(d.getText().equals(e.getText())){
           
@@ -197,20 +177,8 @@ public class Registration extends javax.swing.JFrame {
             this.setVisible(false);
         }
         else {
-             if (a.getText().equals("")) { 
-                JOptionPane.showMessageDialog(null,"Fill the details!!");
-        }
-             if(b.getText().equals("")){
-                 JOptionPane.showMessageDialog(null,"Fill the details!!");
-             }
-             if(c.getText().equals("")){
-                 JOptionPane.showMessageDialog(null,"Fill the details!!");
-             }
-             if(d.getText().equals("")){
-                 JOptionPane.showMessageDialog(null,"Fill the details!!");
-             }
-             if(e.getText().equals("")){
-                 JOptionPane.showMessageDialog(null,"Fill the details!!");
+             if(a.getText().equals("") && b.getText().equals("") && c.getText().equals("") && d.getText().equals("") && e.getText().equals("")){
+                 JOptionPane.showMessageDialog(this,"Fill the details");
              }
         }
        }
