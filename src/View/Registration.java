@@ -126,7 +126,7 @@ public class Registration extends javax.swing.JFrame {
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(554, 446, 133, 38));
 
-        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\projectimage\\jewe.jpg")); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/login.jpg"))); // NOI18N
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1160, 560));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

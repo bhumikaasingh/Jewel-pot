@@ -3,7 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package View;
-
+import controller.bookcontroller;
+import database.DbConnection;
+import model.bookmodel;
 /**
  *
  * @author Kiran
@@ -27,42 +29,42 @@ public class book extends javax.swing.JFrame {
     private void initComponents() {
 
         jTextField3 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        Home = new javax.swing.JButton();
+        Comtact_us = new javax.swing.JButton();
+        Profile = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        Location_ = new javax.swing.JTextField();
+        Contact_No = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        Booking_Date = new javax.swing.JTextField();
+        Shipment_Date = new javax.swing.JTextField();
+        Book = new javax.swing.JButton();
+        Cancel = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
 
         jTextField3.setText("jTextField3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setFont(new java.awt.Font("Times New Roman", 3, 24)); // NOI18N
-        jButton1.setText("Home");
-        jButton1.setBorder(null);
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 70, -1));
+        Home.setFont(new java.awt.Font("Times New Roman", 3, 24)); // NOI18N
+        Home.setText("Home");
+        Home.setBorder(null);
+        getContentPane().add(Home, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 70, -1));
 
-        jButton2.setFont(new java.awt.Font("Times New Roman", 2, 24)); // NOI18N
-        jButton2.setText("Contact us");
-        jButton2.setBorder(null);
-        jButton2.setBorderPainted(false);
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(403, 30, 110, -1));
+        Comtact_us.setFont(new java.awt.Font("Times New Roman", 2, 24)); // NOI18N
+        Comtact_us.setText("Contact us");
+        Comtact_us.setBorder(null);
+        Comtact_us.setBorderPainted(false);
+        getContentPane().add(Comtact_us, new org.netbeans.lib.awtextra.AbsoluteConstraints(403, 30, 110, -1));
 
-        jButton3.setFont(new java.awt.Font("Times New Roman", 2, 24)); // NOI18N
-        jButton3.setText("Profile");
-        jButton3.setBorder(null);
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 30, 70, -1));
+        Profile.setFont(new java.awt.Font("Times New Roman", 2, 24)); // NOI18N
+        Profile.setText("Profile");
+        Profile.setBorder(null);
+        getContentPane().add(Profile, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 30, 70, -1));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setText("Location :");
@@ -71,45 +73,71 @@ public class book extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel2.setText("Contact No :");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 184, -1, -1));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(667, 133, 179, 25));
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(667, 188, 179, -1));
+
+        Location_.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Location_ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Location_, new org.netbeans.lib.awtextra.AbsoluteConstraints(667, 133, 179, 25));
+        getContentPane().add(Contact_No, new org.netbeans.lib.awtextra.AbsoluteConstraints(667, 188, 179, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setText("Booking Date :");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel4.setText("Shipment :");
+        jLabel4.setText("Shipment  Date:");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, -1, -1));
 
-        jTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField4.setText("YY/MM/DD");
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 300, 149, -1));
+        Booking_Date.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Booking_Date.setText("YY/MM/DD");
+        getContentPane().add(Booking_Date, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 300, 149, -1));
 
-        jTextField5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField5.setText("YY/MM/DD");
-        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, 149, -1));
+        Shipment_Date.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Shipment_Date.setText("YY/MM/DD");
+        getContentPane().add(Shipment_Date, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, 149, -1));
 
-        jButton4.setBackground(new java.awt.Color(237, 154, 128));
-        jButton4.setFont(new java.awt.Font("Times New Roman", 2, 24)); // NOI18N
-        jButton4.setText("Book Now");
-        jButton4.setBorder(null);
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(212, 415, -1, -1));
+        Book.setBackground(new java.awt.Color(237, 154, 128));
+        Book.setFont(new java.awt.Font("Times New Roman", 2, 24)); // NOI18N
+        Book.setText("Book Now");
+        Book.setBorder(null);
+        Book.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BookActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Book, new org.netbeans.lib.awtextra.AbsoluteConstraints(212, 415, -1, -1));
 
-        jButton5.setBackground(new java.awt.Color(237, 154, 128));
-        jButton5.setFont(new java.awt.Font("Times New Roman", 2, 24)); // NOI18N
-        jButton5.setText("Cancel");
-        jButton5.setBorder(null);
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(598, 415, -1, -1));
+        Cancel.setBackground(new java.awt.Color(237, 154, 128));
+        Cancel.setFont(new java.awt.Font("Times New Roman", 2, 24)); // NOI18N
+        Cancel.setText("Cancel");
+        Cancel.setBorder(null);
+        getContentPane().add(Cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(598, 415, -1, -1));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Project/12.jpg"))); // NOI18N
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/item.jpg"))); // NOI18N
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, 200));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("D:\\Downloads\\Untitled.png")); // NOI18N
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/home.jpg"))); // NOI18N
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 510));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BookActionPerformed
+// TODO add your handling code here:
+        String BookingDate=Booking_Date.getText();
+        String ShipmentDate=Shipment_Date.getText();
+        String Location=Location_.getText();
+        String ContactNo=Contact_No.getText();
+        bookmodel model=new bookmodel(BookingDate,ShipmentDate,Location,ContactNo);
+        bookcontroller book=new bookcontroller();
+        book.insertbookmodel(model);
+    }//GEN-LAST:event_BookActionPerformed
+
+    private void Location_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Location_ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Location_ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -147,21 +175,22 @@ public class book extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton Book;
+    private javax.swing.JTextField Booking_Date;
+    private javax.swing.JButton Cancel;
+    private javax.swing.JButton Comtact_us;
+    private javax.swing.JTextField Contact_No;
+    private javax.swing.JButton Home;
+    private javax.swing.JTextField Location_;
+    private javax.swing.JButton Profile;
+    private javax.swing.JTextField Shipment_Date;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
 }
+

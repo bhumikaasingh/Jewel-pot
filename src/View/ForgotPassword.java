@@ -4,11 +4,25 @@
  */
 package View;
 
+import database.DbConnection;
+
 /**
  *
  * @author Kiran
  */
 public class ForgotPassword extends javax.swing.JFrame {
+
+    public static String getentername() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public static String getentercontact() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public static String getentermessage() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 
     /**
      * Creates new form ForgotPassword
@@ -28,15 +42,15 @@ public class ForgotPassword extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        Email_ = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        Last_Pw = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
+        Continue = new javax.swing.JButton();
+        New_Pw = new javax.swing.JPasswordField();
+        Confirm_Pw = new javax.swing.JPasswordField();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -49,51 +63,89 @@ public class ForgotPassword extends javax.swing.JFrame {
         jLabel2.setText("Email :");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 116, 64, -1));
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        Email_.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                Email_ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 147, 221, -1));
+        getContentPane().add(Email_, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 147, 221, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setText("Last Password :");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 218, 128, -1));
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        Last_Pw.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                Last_PwActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 261, 221, -1));
+        getContentPane().add(Last_Pw, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 261, 221, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel4.setText("New Password :");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(771, 116, 134, -1));
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(771, 147, 221, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel5.setText("Confirm New Password :");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(771, 218, -1, -1));
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(771, 261, 221, -1));
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jButton1.setText("Continue");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(516, 371, -1, -1));
+        Continue.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        Continue.setText("Continue");
+        Continue.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ContinueActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Continue, new org.netbeans.lib.awtextra.AbsoluteConstraints(516, 371, -1, -1));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon("D:\\Downloads\\12.png")); // NOI18N
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -40, 1190, 590));
+        New_Pw.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                New_PwActionPerformed(evt);
+            }
+        });
+        getContentPane().add(New_Pw, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 150, 220, -1));
+
+        Confirm_Pw.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Confirm_PwActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Confirm_Pw, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 260, 220, -1));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/login.jpg"))); // NOI18N
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1180, 510));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void Email_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Email_ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_Email_ActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void Last_PwActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Last_PwActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_Last_PwActionPerformed
+
+    private void Confirm_PwActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Confirm_PwActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Confirm_PwActionPerformed
+
+    private void New_PwActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_New_PwActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_New_PwActionPerformed
+
+    private void ContinueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContinueActionPerformed
+        // TODO add your handling code here:
+        DbConnection dbConnection;
+        String Email=Email_.getText();
+        String LastPassword=Last_Pw.getText();
+        String NewPassword=New_Pw.getText();
+        String ConfirmPassword=Confirm_Pw.getText();
+        String insertQuery=String.format("INSERT INTO Book ('%s','%s','%s','%s')",Email,LastPassword,NewPassword,ConfirmPassword);
+        dbConnection = new DbConnection();
+        int  result = dbConnection.manipulate(insertQuery);
+        
+    }//GEN-LAST:event_ContinueActionPerformed
 
     /**
      * @param args the command line arguments
@@ -131,16 +183,16 @@ public class ForgotPassword extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JPasswordField Confirm_Pw;
+    private javax.swing.JButton Continue;
+    private javax.swing.JTextField Email_;
+    private javax.swing.JTextField Last_Pw;
+    private javax.swing.JPasswordField New_Pw;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JLabel jLabel7;
     // End of variables declaration//GEN-END:variables
 }
