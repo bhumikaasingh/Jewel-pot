@@ -168,8 +168,9 @@ public class Registration extends javax.swing.JFrame {
             Student so=new Student(a.getText(),b.getText(),c.getText(),d.getText(),e.getText());
             registercontroller sc=new registercontroller();
             int insertStudent=sc.insertStudent(so);
-        
+            System.out.println(insertStudent);
         if(insertStudent>0){
+            
             System.out.println("Registered!!!");
             JOptionPane.showMessageDialog(this,"Registered!");
             Login log = new Login();
@@ -186,8 +187,8 @@ public class Registration extends javax.swing.JFrame {
             System.out.println("incorrect password and confirmpassword!!");
             JOptionPane.showMessageDialog(this,"Password and ConfirmPassword Didn't match");
        }
-//        this.setVisible(false);
-       }   
+       } 
+       
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

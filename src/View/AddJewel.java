@@ -14,12 +14,16 @@ import javax.swing.JFrame;
  * @author lucif
  */
 public class AddJewel extends javax.swing.JFrame {
-
+static int id;
     /**
      * Creates new form AddJewel
      */
     public AddJewel() {
         initComponents();
+    }
+    public AddJewel(int id) {
+        initComponents();
+        this.id = id;
     }
 
     /**
@@ -171,7 +175,8 @@ public class AddJewel extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        Selling sel = new Selling();
+        Selling sel = new Selling(id);
+        System.out.println(id);
         sel.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed

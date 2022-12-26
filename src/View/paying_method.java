@@ -10,12 +10,17 @@ import database.DbConnection;
  * @author Dell
  */
 public class paying_method extends javax.swing.JFrame {
+    static int id;
 
-    /**
+    /**i
      * Creates new form paying_method
      */
     public paying_method() {
         initComponents();
+    }
+     public paying_method(int id) {
+        initComponents();
+        this.id=id;
     }
 
     /**
@@ -35,6 +40,7 @@ public class paying_method extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -75,7 +81,15 @@ public class paying_method extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 157, 30));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/jewe.jpg"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 340));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 340));
+
+        jButton5.setText("jButton5");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 130, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -84,10 +98,12 @@ public class paying_method extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         DbConnection dbConnection;
+        
         Object payment= jComboBox1.getSelectedItem();
         String pay=payment.toString();
         String amount=jTextField1.getText();
-        String insertQuery=String.format("INSERT INTO paying_method VALUES('%s','%s')",amount,pay);
+        System.out.println(id);
+        String insertQuery=String.format("INSERT INTO paying_method(id,amount,payment_method) VALUES(%d,'%s','%s')",id,amount,pay);
         dbConnection = new DbConnection();
         int  result = dbConnection.manipulate(insertQuery);
 
@@ -96,6 +112,14 @@ public class paying_method extends javax.swing.JFrame {
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        
+        Selling sel = new Selling();
+        sel.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -137,6 +161,7 @@ public class paying_method extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
