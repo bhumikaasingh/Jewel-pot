@@ -215,6 +215,7 @@ ResultSet rs;
                 Logger.getLogger(profile.class.getName()).log(Level.SEVERE, null, ex);
             }   
                 
+
           
     }//GEN-LAST:event_editProfileActionPerformed
 

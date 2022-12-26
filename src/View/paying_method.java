@@ -10,13 +10,17 @@ import database.DbConnection;
  * @author Dell
  */
 public class paying_method extends javax.swing.JFrame {
-    
+    static int id;
 
     /**i
      * Creates new form paying_method
      */
     public paying_method() {
         initComponents();
+    }
+     public paying_method(int id) {
+        initComponents();
+        this.id=id;
     }
 
     /**
@@ -96,11 +100,10 @@ public class paying_method extends javax.swing.JFrame {
         DbConnection dbConnection;
         
         Object payment= jComboBox1.getSelectedItem();
-        
         String pay=payment.toString();
         String amount=jTextField1.getText();
-        
-        String insertQuery=String.format("INSERT INTO paying_method(amount,payment_method) VALUES('%s','%s')",amount,pay);
+        System.out.println(id);
+        String insertQuery=String.format("INSERT INTO paying_method(id,amount,payment_method) VALUES(%d,'%s','%s')",id,amount,pay);
         dbConnection = new DbConnection();
         int  result = dbConnection.manipulate(insertQuery);
 

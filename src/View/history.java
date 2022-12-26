@@ -14,11 +14,16 @@ public class history extends javax.swing.JFrame {
          Connection con = null;
          PreparedStatement pst = null;
          ResultSet rs = null;
+         static int id;
     /**
      * Creates new form history
      */
     public history() {
         initComponents();      
+    }
+     public history(int id) {
+        initComponents();
+        this.id=id;
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -60,7 +65,7 @@ public class history extends javax.swing.JFrame {
                 {null, null}
             },
             new String [] {
-                "Name", "Amount"
+                "amount", "payment_method"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -119,7 +124,9 @@ public class history extends javax.swing.JFrame {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://db4free.net:3306/jewelspots","jewelspots","jewelspots");
-            pst = con.prepareStatement("SELECT username,id FROM register WHERE paying_id=%d");
+            String Query = String.format("SELECT * FROM paying_method where id=%d ",id);
+            System.out.println(id);
+            pst = con.prepareStatement(Query);
 //                pst = con.prepareStatement("SELECT * FROM paying_method ");
             rs = pst.executeQuery();
             ResultSetMetaData rsmd = rs.getMetaData();
@@ -129,8 +136,8 @@ public class history extends javax.swing.JFrame {
             while(rs.next()){
                 Vector v = new Vector();
                 for(int i=1;i<=n;i++){
-                    v.add(rs.getString("username"));
-                    v.add(rs.getInt("id"));
+                    v.add(rs.getString("amount"));
+                    v.add(rs.getString("payment_method"));
                 }
                 System.out.println(v);
                 dtm.addRow(v);
