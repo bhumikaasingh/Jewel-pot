@@ -4,6 +4,9 @@
  */
 package View;
 
+import controller.Discountcontroller;
+import model.Discountmodel;
+
 /**
  *
  * @author Kiran
@@ -29,11 +32,11 @@ public class DiscountApproval extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        DiscountCode = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        UserName = new javax.swing.JTextField();
+        Apply = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        UserName = new javax.swing.JTextField();
+        Code = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
 
@@ -51,19 +54,30 @@ public class DiscountApproval extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setText("Discount Code :");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, -1));
-        getContentPane().add(DiscountCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, 154, -1));
+        getContentPane().add(UserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, 154, -1));
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jButton1.setText("Apply");
-        jButton1.setBorder(null);
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 360, -1, -1));
+        Apply.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        Apply.setText("Apply");
+        Apply.setBorder(null);
+        Apply.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ApplyActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Apply, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 360, -1, -1));
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jButton2.setText("Cancel");
         jButton2.setBorder(null);
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(464, 356, -1, -1));
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(397, 217, -1, -1));
-        getContentPane().add(UserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 260, 154, -1));
+
+        Code.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CodeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Code, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 260, 154, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel5.setText("User Name :");
@@ -74,6 +88,19 @@ public class DiscountApproval extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ApplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ApplyActionPerformed
+        // TODO add your handling code here:
+        String Username=UserName.getText();
+        String DiscountCode=Code.getText();
+        Discountmodel model=new Discountmodel(Username,DiscountCode);
+        Discountcontroller Discount=new Discountcontroller();
+        Discount.insertDiscountmodel(model);
+    }//GEN-LAST:event_ApplyActionPerformed
+
+    private void CodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CodeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CodeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -111,9 +138,9 @@ public class DiscountApproval extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField DiscountCode;
+    private javax.swing.JButton Apply;
+    private javax.swing.JTextField Code;
     private javax.swing.JTextField UserName;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

@@ -4,7 +4,10 @@
  */
 package View;
 
+import controller.ForgotPasswordcontroller;
 import database.DbConnection;
+import javax.swing.JOptionPane;
+import model.ForgotPasswordmodel;
 
 /**
  *
@@ -44,13 +47,13 @@ public class ForgotPassword extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         Email_ = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        Last_Pw = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         Continue = new javax.swing.JButton();
-        New_Pw = new javax.swing.JPasswordField();
-        Confirm_Pw = new javax.swing.JPasswordField();
-        jLabel7 = new javax.swing.JLabel();
+        NewPw = new javax.swing.JTextField();
+        LastPw = new javax.swing.JTextField();
+        ConfirmPw = new javax.swing.JTextField();
+        Pic = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -68,18 +71,11 @@ public class ForgotPassword extends javax.swing.JFrame {
                 Email_ActionPerformed(evt);
             }
         });
-        getContentPane().add(Email_, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 147, 221, -1));
+        getContentPane().add(Email_, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 221, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setText("Last Password :");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 218, 128, -1));
-
-        Last_Pw.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Last_PwActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Last_Pw, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 261, 221, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel4.setText("New Password :");
@@ -98,22 +94,17 @@ public class ForgotPassword extends javax.swing.JFrame {
         });
         getContentPane().add(Continue, new org.netbeans.lib.awtextra.AbsoluteConstraints(516, 371, -1, -1));
 
-        New_Pw.addActionListener(new java.awt.event.ActionListener() {
+        NewPw.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                New_PwActionPerformed(evt);
+                NewPwActionPerformed(evt);
             }
         });
-        getContentPane().add(New_Pw, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 150, 220, -1));
+        getContentPane().add(NewPw, new org.netbeans.lib.awtextra.AbsoluteConstraints(771, 159, 202, -1));
+        getContentPane().add(LastPw, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 282, 202, -1));
+        getContentPane().add(ConfirmPw, new org.netbeans.lib.awtextra.AbsoluteConstraints(771, 282, 202, -1));
 
-        Confirm_Pw.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Confirm_PwActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Confirm_Pw, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 260, 220, -1));
-
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/login.jpg"))); // NOI18N
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1180, 510));
+        Pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/login.jpg"))); // NOI18N
+        getContentPane().add(Pic, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1180, 460));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -122,30 +113,29 @@ public class ForgotPassword extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Email_ActionPerformed
 
-    private void Last_PwActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Last_PwActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Last_PwActionPerformed
-
-    private void Confirm_PwActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Confirm_PwActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Confirm_PwActionPerformed
-
-    private void New_PwActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_New_PwActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_New_PwActionPerformed
-
     private void ContinueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContinueActionPerformed
         // TODO add your handling code here:
-        DbConnection dbConnection;
         String Email=Email_.getText();
-        String LastPassword=Last_Pw.getText();
-        String NewPassword=New_Pw.getText();
-        String ConfirmPassword=Confirm_Pw.getText();
-        String insertQuery=String.format("INSERT INTO Book ('%s','%s','%s','%s')",Email,LastPassword,NewPassword,ConfirmPassword);
-        dbConnection = new DbConnection();
-        int  result = dbConnection.manipulate(insertQuery);
-        
+        String LastPassword=LastPw.getText();
+        String NewPassword=NewPw.getText();
+        String ConfirmPassword=ConfirmPw.getText();
+        if(NewPassword==ConfirmPassword){
+            ForgotPasswordmodel model=new ForgotPasswordmodel(Email,LastPassword,NewPassword,ConfirmPassword);
+            ForgotPasswordcontroller ForgotPassword=new ForgotPasswordcontroller();
+            ForgotPassword.insertForgotPasswordmodel(model);
+        }
+        if(NewPassword!=ConfirmPassword){
+                        JOptionPane.showMessageDialog(null,"Password does not match");
+
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"Please fill all the input fields...");
+        }
     }//GEN-LAST:event_ContinueActionPerformed
+
+    private void NewPwActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NewPwActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NewPwActionPerformed
 
     /**
      * @param args the command line arguments
@@ -183,16 +173,16 @@ public class ForgotPassword extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPasswordField Confirm_Pw;
+    private javax.swing.JTextField ConfirmPw;
     private javax.swing.JButton Continue;
     private javax.swing.JTextField Email_;
-    private javax.swing.JTextField Last_Pw;
-    private javax.swing.JPasswordField New_Pw;
+    private javax.swing.JTextField LastPw;
+    private javax.swing.JTextField NewPw;
+    private javax.swing.JLabel Pic;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel7;
     // End of variables declaration//GEN-END:variables
 }
