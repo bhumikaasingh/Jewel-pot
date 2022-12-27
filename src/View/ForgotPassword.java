@@ -5,7 +5,6 @@
 package View;
 
 import controller.ForgotPasswordcontroller;
-import database.DbConnection;
 import javax.swing.JOptionPane;
 import model.ForgotPasswordmodel;
 

@@ -11,7 +11,7 @@ public class registercontroller{
         String contact=student.getcontact();
         String password=student.getpassword();
         String confirmPassword=student.getconfirmPassword();
-        String insertQuery=String.format("INSERT INTO register_user VALUES('%s','%s','%s','%s','%s')",name,email,contact,password,confirmPassword);
+        String insertQuery=String.format("INSERT INTO register VALUES('%s','%s','%s','%s','%s')",name,email,contact,password,confirmPassword);
         dbconnection=new DbConnection();
         int result=dbconnection.manipulate(insertQuery);
         return result;
