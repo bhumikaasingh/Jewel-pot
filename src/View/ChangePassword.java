@@ -109,9 +109,8 @@ public class ChangePassword extends javax.swing.JFrame {
             ChangePasswordcontroller ChangePassword=new ChangePasswordcontroller();
             ChangePassword.insertChangePasswordmodel(model);
     }
-        if(NewPassword!=ConfirmPassword){
+        else if(NewPassword!=ConfirmPassword){
             JOptionPane.showMessageDialog(null,"Password does not match");
-
         }
         else{
             JOptionPane.showMessageDialog(null,"Please fill all the input fields...");
