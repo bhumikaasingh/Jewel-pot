@@ -1,27 +1,28 @@
 package View;
 import Controller.ProfileController;
-import java.awt.Image;
+//import java.awt.Image;
 import java.io.*;
-import java.io.InputStream;
+//import java.io.InputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import java.sql.*;
-import javax.swing.ImageIcon;
-import javax.swing.filechooser.FileNameExtensionFilter;
+//import javax.swing.ImageIcon;
+//import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.filechooser.FileSystemView;
 import model.Student;
 
 public class profile extends javax.swing.JFrame {
     
     
-        File f = null;
-        String path = null;
-        private ImageIcon format = null;
-        String fname = null;
-        int s = 0;
-        byte[] pimage = null;
-        
+//        File f = null;
+//        String path = null;
+//        private ImageIcon format = null;
+//        String fname = null;
+//        int s = 0;
+//        byte[] pimage = null;
+        JFileChooser file;
         static String username;
         static String email;
         static String contact;
@@ -29,31 +30,31 @@ public class profile extends javax.swing.JFrame {
 
        public profile() {
         initComponents();
-        Connect();
+//        Connect();
     }
        public profile(String username,String email,String contact ,int id) {
         initComponents();
-        Connect();
+//        Connect();
         this.username=username;
         this.email=email;
         this.contact=contact;
         this.id=id;
     }
-Connection con;
-PreparedStatement pst;
-ResultSet rs;
-    public void Connect(){
-           try {
-               Class.forName("com.mysql.cj.jdbc.Driver");
-               con = DriverManager.getConnection(
-
-                    "jdbc:mysql://db4free.net:3306/jewelspots","jewelspots","jewelspots");
-           } catch (ClassNotFoundException ex) {
-               Logger.getLogger(profile.class.getName()).log(Level.SEVERE, null, ex);
-           } catch (SQLException ex) {
-               Logger.getLogger(profile.class.getName()).log(Level.SEVERE, null, ex);
-           }
-    }   
+//Connection con;
+//PreparedStatement pst;
+//ResultSet rs;
+//    public void Connect(){
+//           try {
+//               Class.forName("com.mysql.cj.jdbc.Driver");
+//               con = DriverManager.getConnection(
+//
+//                    "jdbc:mysql://db4free.net:3306/jewelspots","jewelspots","jewelspots");
+//           } catch (ClassNotFoundException ex) {
+//               Logger.getLogger(profile.class.getName()).log(Level.SEVERE, null, ex);
+//           } catch (SQLException ex) {
+//               Logger.getLogger(profile.class.getName()).log(Level.SEVERE, null, ex);
+//           }
+//    }   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -191,32 +192,32 @@ ResultSet rs;
 
     private void editProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editProfileActionPerformed
         // TODO add your handling code here:
-        System.out.println(username);
-        System.out.print("Image path -" + path);
-       System.out.print("imageName -" + f.getName());
-        File f = new File(path);
-            try {
-                InputStream is = new FileInputStream(f);
-                pst = con.prepareStatement("INSERT INTO tbl_profile(imageName,imagepath,images)VALUES(?,?,?)");
-                pst.setString(1,f.getName());
-                pst.setString(2, path);
-                pst.setBlob(3, is);
-                int inserted = pst.executeUpdate();
-                if(inserted>0){
-                    JOptionPane.showMessageDialog(this,"image inserted successfully");
-                }
-                else{
-                   JOptionPane.showMessageDialog(this,"insert image first"); 
-                }
-                
-             } catch (FileNotFoundException ex) {
-                Logger.getLogger(profile.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (SQLException ex) {
-                Logger.getLogger(profile.class.getName()).log(Level.SEVERE, null, ex);
-            }   
-                
-
-          
+//        System.out.println(username);
+//        System.out.print("Image path -" + path);
+//       System.out.print("imageName -" + f.getName());
+//        File f = new File(path);
+//            try {
+//                InputStream is = new FileInputStream(f);
+//                pst = con.prepareStatement("INSERT INTO tbl_profile(imageName,imagepath,images)VALUES(?,?,?)");
+//                pst.setString(1,f.getName());
+//                pst.setString(2, path);
+//                pst.setBlob(3, is);
+//                int inserted = pst.executeUpdate();
+//                if(inserted>0){
+//                    JOptionPane.showMessageDialog(this,"image inserted successfully");
+//                }
+//                else{
+//                   JOptionPane.showMessageDialog(this,"insert image first"); 
+//                }
+//                
+//             } catch (FileNotFoundException ex) {
+//                Logger.getLogger(profile.class.getName()).log(Level.SEVERE, null, ex);
+//            } catch (SQLException ex) {
+//                Logger.getLogger(profile.class.getName()).log(Level.SEVERE, null, ex);
+//            }   
+//                
+//
+//          
     }//GEN-LAST:event_editProfileActionPerformed
 
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
@@ -246,21 +247,55 @@ ResultSet rs;
     }//GEN-LAST:event_updateprofileActionPerformed
 
     private void profileimageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileimageActionPerformed
-        // TODO add your handling code here:
+            // TODO add your handling code here:
+            //Code for getting directory of image using jfilechooser and converting into store then storing in database
+        file = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
+        int r = file.showOpenDialog(null);
         
-            JFileChooser fileChooser = new JFileChooser();
-            fileChooser.showOpenDialog(null);
-            FileNameExtensionFilter fnwf = new FileNameExtensionFilter("PNG JPG and JPEG","png","jpeg","jpg");
-            fileChooser.addChoosableFileFilter(fnwf);
-            int load = fileChooser.showOpenDialog(null);
-            if (load==fileChooser.APPROVE_OPTION){
-                f = fileChooser.getSelectedFile();
-                
-                path = f.getAbsolutePath();
-                labelpath.setText(path);
-                ImageIcon ii = new ImageIcon(path);
-                Image img = ii.getImage().getScaledInstance(100,75,Image.SCALE_SMOOTH);
-                labelimage.setIcon(new ImageIcon(img));
+        
+     if (r == JFileChooser.APPROVE_OPTION) {
+    
+    File selectedFile = file.getSelectedFile();
+    String image=String.valueOf(selectedFile);
+    String[] arr=new String[image.length()];
+    String updatedImage="";    //update the image using the following code or for loop
+        for(int i=0;i<=image.length()-1;i++){
+            if(image.charAt(i)=='\\'){
+                arr[i]="/";
+            }else{
+              arr[i]=String.valueOf(image.charAt(i));
+            }
+            updatedImage+=arr[i];
+        }
+        //  System.out.println(updatedImage);
+        
+
+    int Id=id;
+    
+    ProfileController tc = new ProfileController();
+    int updateImage=tc.insertImage(id, updatedImage);
+    if(updateImage>0){
+        JOptionPane.showMessageDialog(null,"Image Updated");
+    }
+    else{
+        JOptionPane.showMessageDialog(null,"Error, please try again.");
+
+    }
+
+        
+//            JFileChooser fileChooser = new JFileChooser();
+//            fileChooser.showOpenDialog(null);
+//            FileNameExtensionFilter fnwf = new FileNameExtensionFilter("PNG JPG and JPEG","png","jpeg","jpg");
+//            fileChooser.addChoosableFileFilter(fnwf);
+//            int load = fileChooser.showOpenDialog(null);
+//            if (load==fileChooser.APPROVE_OPTION){
+//                f = fileChooser.getSelectedFile();
+//                
+//                path = f.getAbsolutePath();
+//                labelpath.setText(path);
+//                ImageIcon ii = new ImageIcon(path);
+//                Image img = ii.getImage().getScaledInstance(100,75,Image.SCALE_SMOOTH);
+//                labelimage.setIcon(new ImageIcon(img));
             }
     }//GEN-LAST:event_profileimageActionPerformed
 

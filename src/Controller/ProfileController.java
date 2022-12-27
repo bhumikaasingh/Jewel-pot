@@ -22,6 +22,16 @@ public class ProfileController{
             int result = dbconnection.manipulate(updateQuery);
             return result;  
     }
+    public int insertImage(int id){
+    String Query = String.format("INSERT INTO register VALUES where tr_image='%s' ",id);
+    dbconnection = new DbConnection();
+    int result = dbconnection.manipulate(Query);
+    return result;
+    }
+
+    public int insertImage(int id, String updatedImage) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
    
 

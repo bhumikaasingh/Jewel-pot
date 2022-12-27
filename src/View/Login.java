@@ -132,8 +132,8 @@ public class Login extends javax.swing.JFrame {
               String DbEmail= result.getString("email");
               String DbPass=result.getString("ppassword");
               
-              System.out.println(DbEmail);
-              System.out.println(DbPass);
+//              System.out.println(DbEmail);
+//              System.out.println(DbPass);
               if(Pass.equals(DbPass) && Email.equals(DbEmail)){
                   
                   
