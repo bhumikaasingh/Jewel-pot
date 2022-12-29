@@ -11,11 +11,16 @@ import database.DbConnection;
  * @author lucif
  */
 public class Selling extends javax.swing.JFrame {
+    static int id;
     /**
      * Creates new form Selling
      */
     public Selling() {
         initComponents();
+    }
+    public Selling(int id) {
+        initComponents();
+        this.id = id;
     }
 
     /**
@@ -200,7 +205,7 @@ public class Selling extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Please fill out required details");
         } 
         else{
-            paying_method pay = new paying_method();
+            paying_method pay = new paying_method(id);
             pay.setVisible(true);
             this.setVisible(false);
             DbConnection dbConnection;

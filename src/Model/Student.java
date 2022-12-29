@@ -7,25 +7,29 @@ public class Student {
         private String Contact;
         private String password ;
         private String confirmPassword;
+        private int paying_id;
         
-        public Student(int id,String username,String email,String contact){
+        public Student(int id,String username,String email,String contact,int paying_id){
             this.id=id;
             this.Username=username;
             this.Email=email;
             this.Contact=contact;
+            this.paying_id=paying_id;
+           
         }
         public Student(){
         
         }
         
         
-        public Student(int id,String Username,String Email,String Contact,String password,String confirmPassword){
+        public Student(int id,String Username,String Email,String Contact,String password,String confirmPassword,int paying_id){
             this.id=id;
             this.Username=Username;
             this.Email=Email;
             this.Contact=Contact;
             this.password=password;
             this.confirmPassword=confirmPassword;
+            this.paying_id=paying_id;
             
         }
         public Student(String Username,String Email,String Contact,String password,String confirmPassword){
@@ -35,6 +39,13 @@ public class Student {
             this.Contact=Contact;
             this.password=password;
             this.confirmPassword=confirmPassword;
+            
+        }
+        public void setpaying_id(int paying_id){
+            this.paying_id=paying_id;
+        }
+        public int getpaying_id(){
+            return this.paying_id;
         }
         public void setid(int id){
             this.id=id;

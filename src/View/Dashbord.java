@@ -149,14 +149,15 @@ public class Dashbord extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         
-        history hst = new history();
+        history hst = new history(id);
         hst.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        AddJewel jew = new AddJewel();
+        AddJewel jew = new AddJewel(id);
+        
         jew.setVisible(true);
         this.setVisible(false);
         
