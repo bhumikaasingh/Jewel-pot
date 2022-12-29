@@ -1,11 +1,9 @@
 package Controller;
-//import java.util.List;
-//import model.profilemod;
+import java.sql.ResultSet;
 import database.DbConnection;
-//import javax.sql.rowset.JdbcRowSet;
-//import javax.sql.rowset.RowSetProvider;
-//import java.util.ArrayList;
-//import model.Student;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 
@@ -22,6 +20,33 @@ public class ProfileController{
             int result = dbconnection.manipulate(updateQuery);
             return result;  
     }
-}
+    public int insertImage(int id,String image1){ //inserting the image form local storage
+        int Id=id;
+        String image=image1;
+     
+        String updateQuery=String.format(
+        "update register set tr_image='%s' where id=%d",image,Id);
+    
+    dbconnection = new DbConnection();
+    int result = dbconnection.manipulate(updateQuery);
+    return result;     
+     }
+    public String getImage(int id){
+        String Query = String.format ("SELECT tr_image from register where id=%d",id );
+        dbconnection = new DbConnection();
+        ResultSet result = dbconnection.retrieve(Query);
+        try {
+            if(result.next()){
+                return (result.getString("tr_image"));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ProfileController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return "false";
+    }
+    
+    }
+
+
    
 

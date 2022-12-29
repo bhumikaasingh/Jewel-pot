@@ -131,25 +131,11 @@ public class Login extends javax.swing.JFrame {
           while(result.next()){
               String DbEmail= result.getString("email");
               String DbPass=result.getString("ppassword");
-              
-              System.out.println(DbEmail);
-              System.out.println(DbPass);
               if(Pass.equals(DbPass) && Email.equals(DbEmail)){
-                  
-                  
-                  
                 JOptionPane.showMessageDialog(this,"logged in sucessfully","logged in",JOptionPane.PLAIN_MESSAGE);
-                  System.out.println("logged in");
-                  Student student = new Student();
-                  
-                  
-                  
                     Dashbord das = new Dashbord(result.getString("username"),result.getString("email"),result.getString("contact"),result.getInt("id"));
-                  
                     das.setVisible(true);
-                    this.setVisible(false);
-                    
-                    System.out.println(result.getString("username"));      
+                    this.setVisible(false);      
               }
           else{
                   if (jTextField1.getText().equals("")) {
