@@ -137,6 +137,7 @@ public class Dashbord extends javax.swing.JFrame {
         
         profile pf = new profile(username,email,contact,id);
         pf.SettingText();
+        pf.setImage();
         pf.setVisible(true);
         this.setVisible(false);
        
