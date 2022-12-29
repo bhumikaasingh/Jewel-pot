@@ -7,13 +7,14 @@ package View;
 import controller.ChangePasswordcontroller;
 import javax.swing.JOptionPane;
 import model.ChangePasswordmodel;
+import java.sql.ResultSet;
 
 /**
  *
  * @author Kiran
  */
 public class ChangePassword extends javax.swing.JFrame {
-
+String userpass="";
     /**
      * Creates new form ChangePassword
      */
@@ -101,16 +102,43 @@ public class ChangePassword extends javax.swing.JFrame {
 
     private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
         // TODO add your handling code here:
+         try{
+                ChangePasswordcontroller control=new ChangePasswordcontroller();
+               ResultSet data= control.fetchdata(1);
+               while(data.next()){
+                    userpass=data.getString("ppassword");
+                   
+               }
+                
+                
+             
+             
+         }catch(Exception e){
+             
+             e.printStackTrace();
+         }
+        
+        
         String CurrentPassword=CurrentPass.getText();
         String NewPassword=NewPw.getText();
         String ConfirmPassword=ConfirmPw.getText();
-        if (NewPassword==ConfirmPassword){
-            ChangePasswordmodel model=new ChangePasswordmodel(CurrentPassword,NewPassword,ConfirmPassword);
+        if (NewPassword.equals(ConfirmPassword)){
+            if(CurrentPassword.equals(userpass)){ 
+            ChangePasswordmodel model=new ChangePasswordmodel(1,CurrentPassword,NewPassword,ConfirmPassword);
             ChangePasswordcontroller ChangePassword=new ChangePasswordcontroller();
-            ChangePassword.insertChangePasswordmodel(model);
-    }
-        else if(NewPassword!=ConfirmPassword){
-            JOptionPane.showMessageDialog(null,"Password does not match");
+           int result=ChangePassword.updatepassword(model);
+           if(result==1){
+                JOptionPane.showMessageDialog(null,"Password changed");
+           }
+            
+            
+            
+    }else{
+              JOptionPane.showMessageDialog(null,"Password does not change");   
+                
+            }
+        
+        
         }
         else{
             JOptionPane.showMessageDialog(null,"Please fill all the input fields...");

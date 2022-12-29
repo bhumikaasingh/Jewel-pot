@@ -5,6 +5,7 @@
 package View;
 
 import controller.Discountcontroller;
+import javax.swing.JOptionPane;
 import model.Discountmodel;
 
 /**
@@ -58,7 +59,7 @@ public class DiscountApproval extends javax.swing.JFrame {
 
         Apply.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         Apply.setText("Apply");
-        Apply.setBorder(null);
+        Apply.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         Apply.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ApplyActionPerformed(evt);
@@ -68,7 +69,7 @@ public class DiscountApproval extends javax.swing.JFrame {
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jButton2.setText("Cancel");
-        jButton2.setBorder(null);
+        jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(464, 356, -1, -1));
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(397, 217, -1, -1));
 
@@ -96,6 +97,7 @@ public class DiscountApproval extends javax.swing.JFrame {
         Discountmodel model=new Discountmodel(Username,DiscountCode);
         Discountcontroller Discount=new Discountcontroller();
         Discount.insertDiscountmodel(model);
+        JOptionPane.showMessageDialog(null,"Discount Approved");
     }//GEN-LAST:event_ApplyActionPerformed
 
     private void CodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CodeActionPerformed
