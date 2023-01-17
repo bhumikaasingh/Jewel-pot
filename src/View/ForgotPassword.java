@@ -4,8 +4,11 @@
  */
 package View;
 
+import controller.ChangePasswordcontroller;
 import controller.ForgotPasswordcontroller;
+import java.sql.ResultSet;
 import javax.swing.JOptionPane;
+import model.ChangePasswordmodel;
 import model.ForgotPasswordmodel;
 
 /**
@@ -50,7 +53,7 @@ public class ForgotPassword extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         Continue = new javax.swing.JButton();
         NewPw = new javax.swing.JTextField();
-        LastPw = new javax.swing.JTextField();
+        UserName = new javax.swing.JTextField();
         ConfirmPw = new javax.swing.JTextField();
         Pic = new javax.swing.JLabel();
 
@@ -73,7 +76,7 @@ public class ForgotPassword extends javax.swing.JFrame {
         getContentPane().add(Email_, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 221, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel3.setText("Last Password :");
+        jLabel3.setText("User Name :");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 218, 128, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -99,7 +102,7 @@ public class ForgotPassword extends javax.swing.JFrame {
             }
         });
         getContentPane().add(NewPw, new org.netbeans.lib.awtextra.AbsoluteConstraints(771, 159, 202, -1));
-        getContentPane().add(LastPw, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 282, 202, -1));
+        getContentPane().add(UserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 282, 202, -1));
         getContentPane().add(ConfirmPw, new org.netbeans.lib.awtextra.AbsoluteConstraints(771, 282, 202, -1));
 
         Pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/login.jpg"))); // NOI18N
@@ -114,18 +117,43 @@ public class ForgotPassword extends javax.swing.JFrame {
 
     private void ContinueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContinueActionPerformed
         // TODO add your handling code here:
+        try{
+               ForgotPasswordcontroller control=new ForgotPasswordcontroller();
+               ResultSet data= control.fetchdata(1);
+               while(data.next()){
+                    String userpass = data.getString("ppassword");
+                   
+               }
+                
+                
+             
+             
+         }catch(Exception e){
+             
+             e.printStackTrace();
+         }
+        
         String Email=Email_.getText();
-        String LastPassword=LastPw.getText();
+        String Username=UserName.getText();
         String NewPassword=NewPw.getText();
         String ConfirmPassword=ConfirmPw.getText();
-        if(NewPassword==ConfirmPassword){
-            ForgotPasswordmodel model=new ForgotPasswordmodel(Email,LastPassword,NewPassword,ConfirmPassword);
+        if (NewPassword.equals(ConfirmPassword)){
+            if(Email.equals(Email)){ 
+            ForgotPasswordmodel model=new ForgotPasswordmodel(1,Email,Username,NewPassword,ConfirmPassword);
             ForgotPasswordcontroller ForgotPassword=new ForgotPasswordcontroller();
-            ForgotPassword.insertForgotPasswordmodel(model);
-        }
-        if(NewPassword!=ConfirmPassword){
-                        JOptionPane.showMessageDialog(null,"Password does not match");
-
+           int result=ForgotPassword.updatepassword(model);
+           if(result==1){
+                JOptionPane.showMessageDialog(null,"Password changed");
+           }
+            
+            
+            
+    }else{
+              JOptionPane.showMessageDialog(null,"Password does not change");   
+                
+            }
+        
+        
         }
         else{
             JOptionPane.showMessageDialog(null,"Please fill all the input fields...");
@@ -175,9 +203,9 @@ public class ForgotPassword extends javax.swing.JFrame {
     private javax.swing.JTextField ConfirmPw;
     private javax.swing.JButton Continue;
     private javax.swing.JTextField Email_;
-    private javax.swing.JTextField LastPw;
     private javax.swing.JTextField NewPw;
     private javax.swing.JLabel Pic;
+    private javax.swing.JTextField UserName;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

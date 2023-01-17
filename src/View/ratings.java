@@ -147,8 +147,8 @@ public class ratings extends javax.swing.JFrame {
 
     private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
         // TODO add your handling code here:
-        String ReviewCmnt=Review.getText();
-        Ratingsmodel model=new Ratingsmodel(ReviewCmnt);
+        String ReviewComment=Review.getText();
+        Ratingsmodel model=new Ratingsmodel(ReviewComment);
         Ratingscontroller Ratings=new Ratingscontroller();
         Ratings.insertRatingsmodel(model);
     }//GEN-LAST:event_SaveActionPerformed

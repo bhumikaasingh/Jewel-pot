@@ -1,13 +1,13 @@
 package model;
 public class Ratingsmodel {
-        private String ReviewCmnt;
-        public Ratingsmodel(String ReviewCmnt){
-            this.ReviewCmnt=ReviewCmnt;
+        private String ReviewComment;
+        public Ratingsmodel(String ReviewComment){
+            this.ReviewComment=ReviewComment;
         }
-        public void setReviewCmnt(String ReviewCmnt){
-            this.ReviewCmnt=ReviewCmnt;
+        public void setReviewComment(String ReviewCommentt){
+            this.ReviewComment=ReviewComment;
         }
-        public String getReviewCmnt(){
-            return this.ReviewCmnt;
+        public String getReviewComment(){
+            return this.ReviewComment;
         }
     }

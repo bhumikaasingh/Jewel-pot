@@ -8,7 +8,6 @@ import controller.ChangePasswordcontroller;
 import javax.swing.JOptionPane;
 import model.ChangePasswordmodel;
 import java.sql.ResultSet;
-
 /**
  *
  * @author Kiran
@@ -103,7 +102,7 @@ String userpass="";
     private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
         // TODO add your handling code here:
          try{
-                ChangePasswordcontroller control=new ChangePasswordcontroller();
+               ChangePasswordcontroller control=new ChangePasswordcontroller();
                ResultSet data= control.fetchdata(1);
                while(data.next()){
                     userpass=data.getString("ppassword");
